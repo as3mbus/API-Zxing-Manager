@@ -36,4 +36,11 @@
         android:cropToPadding="false"
         app:srcCompat="@mipmap/ic_launcher"
         android:contentDescription="TODO" />
+
+    <Button
+        android:id="@+id/scanButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Scan" />
 </LinearLayout>
