@@ -14,10 +14,12 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
         button.setOnClickListener{
             val EditTextValue = editText.text.toString()
+            DataManager.writeInternal(this)
+
             println(EditTextValue)
+            DataManager.readInternal(this)
             try {
                 val bitmap = QRGenerator.TextToImageEncode(EditTextValue)
 
