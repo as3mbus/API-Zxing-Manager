@@ -1,15 +1,11 @@
 package io.github.as3mbus.offline_qr_manager
 
 import android.content.Intent
-import android.graphics.Bitmap
-import android.graphics.Color
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import android.view.View
-import com.google.zxing.BarcodeFormat
-import com.google.zxing.MultiFormatWriter
 import com.google.zxing.WriterException
-import com.google.zxing.common.BitMatrix
+import com.google.zxing.integration.android.IntentIntegrator
+import com.google.zxing.integration.android.IntentResult
 import kotlinx.android.synthetic.main.activity_main.*
 
 
@@ -21,9 +17,9 @@ class MainActivity : AppCompatActivity() {
 
         button.setOnClickListener{
             val EditTextValue = editText.text.toString()
-            println(EditTextValue);
+            println(EditTextValue)
             try {
-                var bitmap = QRGenerator.TextToImageEncode(EditTextValue)
+                val bitmap = QRGenerator.TextToImageEncode(EditTextValue)
 
                 imageView.setImageBitmap(bitmap)
 
@@ -34,8 +30,20 @@ class MainActivity : AppCompatActivity() {
         }
         scanButton.setOnClickListener{
 
-            IntentIntegrator
+            val intentIntegr= IntentIntegrator(this)
+            intentIntegr.initiateScan()
         }
-    }
 
+
+
+    }
+    override fun onActivityResult(requestCode:Int, resultCode:Int, intent:Intent) {
+        val scanResult :IntentResult
+        scanResult = IntentIntegrator.parseActivityResult(requestCode, resultCode, intent)
+        if (scanResult != null ) {
+            editText.setText(scanResult.contents)
+        }
+        // else continue with any other code you need in the method
+
+    }
 }
