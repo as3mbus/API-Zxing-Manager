@@ -37,12 +37,12 @@ class MainActivity : AppCompatActivity() {
 
 
     }
-    override fun onActivityResult(requestCode:Int, resultCode:Int, intent:Intent) {
-        val scanResult :IntentResult
-        scanResult = IntentIntegrator.parseActivityResult(requestCode, resultCode, intent)
-        if (scanResult != null ) {
-            editText.setText(scanResult.contents)
-        }
+    override fun onActivityResult(requestCode:Int, resultCode:Int, intent:Intent?) {
+            val scanResult: IntentResult?
+            scanResult = IntentIntegrator.parseActivityResult(requestCode, resultCode, intent)
+            if (scanResult!= null)
+                editText.setText(scanResult.contents)
+
         // else continue with any other code you need in the method
 
     }
