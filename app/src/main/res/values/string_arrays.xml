@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="outlet_name">
+        <item>1 Ayam</item>
+        <item>2 Bakso</item>
+        <item>3 Coklat</item>
+        <item>4 Donat</item>
+        <item>5 Es Krim</item>
+        <item>6 Gorengan</item>
+        <item>7 Intip</item>
+        <item>8 Jengkol</item>
+        <item>9 Kacang</item>
+        <item>10 Lemon</item>
+        <item>11 Nanas</item>
+        <item>12 Oreo</item>
+        <item>13 Pecel</item>
+        <item>14 Quasar</item>
+        <item>15 Rengginang</item>
+
+    </string-array>
+</resources>
