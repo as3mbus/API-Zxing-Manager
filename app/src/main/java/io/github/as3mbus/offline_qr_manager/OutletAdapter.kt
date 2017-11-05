@@ -1,6 +1,9 @@
 package io.github.as3mbus.offline_qr_manager
 
 import android.content.Context
+import android.content.Intent
+import android.os.Bundle
+import android.support.v4.content.ContextCompat.startActivity
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
@@ -14,18 +17,30 @@ import android.widget.Toast
  */
 class OutletAdapter : RecyclerView.Adapter<OutletAdapter.ViewHolder> {
     var values: MutableList<String>? = null
-    var adapterContext: Context? = null
     override fun onBindViewHolder(holder: ViewHolder?, position: Int) {
         val name = values?.get(position)
         holder?.layout?.setOnClickListener {
-            Toast.makeText(this.adapterContext, "" + position + " Index is pressed", Toast.LENGTH_SHORT).show()
+            val i = Intent(holder.viewContext, OutletConfirmActivity::class.java);
+
+            //Create the bundle
+            val bundle = Bundle();
+
+            //Add your data to bundle
+            bundle.putString("outlet", values?.get(position));
+
+            //Add the bundle to the intent
+            i.putExtras(bundle);
+
+            //Fire that second activity
+
+            startActivity(holder.viewContext,i,bundle);
+            Toast.makeText(holder.viewContext, "" + position + " Index is pressed", Toast.LENGTH_SHORT).show()
         }
 
         holder?.outletTextView?.setText(name)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): ViewHolder {
-        this.adapterContext = parent?.context
         val inflater = LayoutInflater.from(parent?.getContext());
         val v = inflater.inflate(R.layout.outlet_item, parent, false);
         return ViewHolder(v)
@@ -43,10 +58,12 @@ class OutletAdapter : RecyclerView.Adapter<OutletAdapter.ViewHolder> {
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var layout: View? = null
         var outletTextView: TextView? = null
+        var viewContext: Context? = null
 
         init {
             layout = itemView
             outletTextView = itemView.findViewById(R.id.outletTextView)
+            viewContext = itemView.context
 
         }
     }

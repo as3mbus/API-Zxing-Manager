@@ -9,6 +9,7 @@
     android:clickable="true"
     android:focusable="true"
     android:background="?android:attr/selectableItemBackground"
+    tools:context=".OutletActivity"
     android:orientation="vertical">
 
 
