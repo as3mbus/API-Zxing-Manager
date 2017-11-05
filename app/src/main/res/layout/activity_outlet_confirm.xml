@@ -20,13 +20,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:labelFor="@id/editText3"
+        android:labelFor="@id/passwordField"
         android:text="@string/outlet_confirmation_message"
         android:textAlignment="center"
         android:textSize="18sp" />
 
     <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/passwordField"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
@@ -34,7 +34,7 @@
         android:inputType="textPassword" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/confirmButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
