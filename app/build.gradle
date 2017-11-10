@@ -7,7 +7,7 @@ apply plugin: 'kotlin-android-extensions'
 android {
     compileSdkVersion 26
     defaultConfig {
-        applicationId "io.github.as3mbus.offline_qr_manager"
+        applicationId "io.github.as3mbus.QRManager"
         minSdkVersion 19
         targetSdkVersion 26
         versionCode 1

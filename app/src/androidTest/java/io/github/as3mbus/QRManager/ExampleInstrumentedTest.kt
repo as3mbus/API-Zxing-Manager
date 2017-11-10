@@ -1,4 +1,4 @@
-package io.github.as3mbus.offline_qr_manager
+package io.github.as3mbus.QRManager
 
 import android.support.test.InstrumentationRegistry
 import android.support.test.runner.AndroidJUnit4
@@ -19,6 +19,6 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getTargetContext()
-        assertEquals("io.github.as3mbus.offline_qr_manager", appContext.packageName)
+        assertEquals("io.github.as3mbus.QRManager", appContext.packageName)
     }
 }

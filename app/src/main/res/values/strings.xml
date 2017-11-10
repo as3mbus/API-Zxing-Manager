@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Offline-QR-Manager</string>
+    <string name="app_name">QR-Manager</string>
     <string name="welcome_message">Thank you for your partnership with us so that we can deliver this awesome app to you and other people</string>
     <string name="redeem_title">Redeem QR</string>
     <string name="outlet_content">outlet</string>

@@ -1,4 +1,4 @@
-package io.github.as3mbus.offline_qr_manager
+package io.github.as3mbus.QRManager
 
 import android.graphics.Bitmap
 import android.graphics.Color

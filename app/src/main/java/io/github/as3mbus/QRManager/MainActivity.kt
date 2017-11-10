@@ -1,4 +1,4 @@
-package io.github.as3mbus.offline_qr_manager
+package io.github.as3mbus.QRManager
 
 import android.bluetooth.BluetoothAdapter
 import android.content.Intent
@@ -6,7 +6,6 @@ import android.net.Uri
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.widget.Toast
-import com.google.zxing.WriterException
 import com.google.zxing.integration.android.IntentIntegrator
 import com.google.zxing.integration.android.IntentResult
 import kotlinx.android.synthetic.main.activity_main.*
@@ -20,19 +19,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        button.setOnClickListener{
-            val EditTextValue = editText.text.toString()
-            DataManager.writeInternal(this,"data.txt","hello world")
-            println(EditTextValue)
-            DataManager.readInternal(this, "data.txt")
-            try {
-                val bitmap = QRGenerator.TextToImageEncode(EditTextValue)
+        callButton.setOnClickListener{
 
-                imageView.setImageBitmap(bitmap)
-
-            } catch (e: WriterException) {
-                e.printStackTrace()
-            }
 
         }
         scanButton.setOnClickListener{
@@ -77,14 +65,14 @@ class MainActivity : AppCompatActivity() {
         val scanResult: IntentResult?
         scanResult = IntentIntegrator.parseActivityResult(requestCode, resultCode, intent)
         if (scanResult!= null)
-            editText.setText(scanResult.contents)
+//            editText.setText(scanResult.contents)
         if (resultCode == DISCOVER_DURATION && requestCode == REQUEST_BLU) {
             val i = Intent()
             i.action = Intent.ACTION_SEND
             i.type = "*/*"
 
             val file = File(applicationContext.getExternalFilesDir(null).path,"data.txt")
-            editText.setText(file.path)
+//            editText.setText(file.path)
             i.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(file))
 
             val pm = packageManager

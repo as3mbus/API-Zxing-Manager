@@ -1,13 +1,9 @@
-package io.github.as3mbus.offline_qr_manager
+package io.github.as3mbus.QRManager
 
-import android.app.assist.AssistContent
 import android.os.Environment
 import android.support.v7.app.AppCompatActivity
 import java.io.File
 import java.io.FileOutputStream
-import android.os.Environment.MEDIA_MOUNTED_READ_ONLY
-import android.os.Environment.MEDIA_MOUNTED
-import android.view.ViewParent
 
 
 /**
