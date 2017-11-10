@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="io.github.as3mbus.offline_qr_manager.OutletConfirmActivity">
+    tools:context=".OutletConfirmActivity">
 
     <ImageView
         android:id="@+id/imageView6"
