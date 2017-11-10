@@ -20,12 +20,9 @@
         app:title="@string/outlet_content"
         app:titleTextColor="@color/QRCodeWhiteColor" />
 
-    <GridView xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/outletGridView"
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/outletRecyclerView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:numColumns="3"
-        android:padding="10dp"
-        android:stretchMode="columnWidth"/>
+        android:layout_height="match_parent" />
+
 </LinearLayout>
