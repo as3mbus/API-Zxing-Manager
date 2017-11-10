@@ -20,6 +20,21 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         callButton.setOnClickListener{
+            val i = Intent(this, RedeemActivity::class.java);
+
+
+            //Create the bundle
+            val bundle = Bundle();
+
+            //Add your data to bundle
+            bundle.putString("outlet", "eyooo");
+
+            //Add the bundle to the intent
+            i.putExtras(bundle);
+
+            //Fire that second activity
+
+            ContextCompat.startActivity(this, i, bundle);
 
         }
         scanButton.setOnClickListener{

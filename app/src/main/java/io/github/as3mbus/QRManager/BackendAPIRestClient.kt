@@ -16,6 +16,9 @@ public class BackendAPIRestClient{
         fun get(url: String, params: RequestParams?, responseHandler: AsyncHttpResponseHandler) {
             client.get(getAbsoluteUrl(url), params, responseHandler)
         }
+        fun getActive(id: String, responseHandler: AsyncHttpResponseHandler) {
+            client.get(getAbsoluteUrl("active/"+id), null, responseHandler)
+        }
 
         fun post(url: String, params: RequestParams?, responseHandler: AsyncHttpResponseHandler) {
             client.post(getAbsoluteUrl(url), params, responseHandler)
