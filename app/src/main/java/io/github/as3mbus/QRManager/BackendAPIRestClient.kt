@@ -1,4 +1,4 @@
-package io.github.as3mbus.offline_qr_manager
+package io.github.as3mbus.QRManager
 
 import com.loopj.android.http.AsyncHttpClient
 import com.loopj.android.http.AsyncHttpResponseHandler
@@ -13,14 +13,14 @@ public class BackendAPIRestClient{
 
         private val client = AsyncHttpClient()
 
-        fun get(url: String, params: RequestParams, responseHandler: AsyncHttpResponseHandler) {
+        fun get(url: String, params: RequestParams?, responseHandler: AsyncHttpResponseHandler) {
             client.get(getAbsoluteUrl(url), params, responseHandler)
         }
 
-        fun post(url: String, params: RequestParams, responseHandler: AsyncHttpResponseHandler) {
+        fun post(url: String, params: RequestParams?, responseHandler: AsyncHttpResponseHandler) {
             client.post(getAbsoluteUrl(url), params, responseHandler)
         }
-        fun patch(url: String, params: RequestParams, responseHandler: AsyncHttpResponseHandler) {
+        fun patch(url: String, params: RequestParams?, responseHandler: AsyncHttpResponseHandler) {
             client.patch(getAbsoluteUrl(url), params, responseHandler)
         }
 

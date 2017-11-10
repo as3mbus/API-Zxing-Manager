@@ -15,31 +15,12 @@
     <!-- Include other widget or layout tags here. These are considered
             "child views" or "children" of the linear layout -->
 
-    <EditText
-        android:id="@+id/editText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:ems="10"
-        android:hint="Code"
-        android:inputType="textCapCharacters" />
-
     <Button
-        android:id="@+id/button"
+        android:id="@+id/callButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:text="Generate" />
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:adjustViewBounds="true"
-        android:cropToPadding="false"
-        app:srcCompat="@mipmap/ic_launcher"
-        android:contentDescription="TODO" />
 
     <Button
         android:id="@+id/scanButton"
