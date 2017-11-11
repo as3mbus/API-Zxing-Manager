@@ -12,7 +12,7 @@ import org.json.JSONObject
 /**
  * Created by as3mbus on 10/11/17.
  */
-public class BackendAPI {
+class BackendAPI {
 
     val parser: Parser = Parser()
     @Throws(JSONException::class)
@@ -23,12 +23,11 @@ public class BackendAPI {
             override fun onSuccess(statusCode: Int, headers: Array<Header>, response: JSONObject) {
                 // If the response is JSONObject instead of expected JSONArray
 
-                val firstEvent = response
                 val json: JsonObject = parser.parse(response.toString()) as JsonObject
                 val tweetText = json.string("text")
 
                 // Do something with the response
-                result = (tweetText)
+                println(tweetText)
             }
         })
     }
