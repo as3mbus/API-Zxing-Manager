@@ -18,7 +18,7 @@ import android.widget.Toast
 class OutletAdapter : RecyclerView.Adapter<OutletAdapter.ViewHolder> {
     var values: MutableList<String>? = null
     override fun onBindViewHolder(holder: ViewHolder?, position: Int) {
-        val name = values?.get(position)
+        val outletname = values?.get(position)
         holder?.layout?.setOnClickListener {
             val i = Intent(holder.viewContext, OutletConfirmActivity::class.java);
 
@@ -26,7 +26,8 @@ class OutletAdapter : RecyclerView.Adapter<OutletAdapter.ViewHolder> {
             val bundle = Bundle();
 
             //Add your data to bundle
-            bundle.putString("outlet", values?.get(position));
+            bundle.putString("outlet", outletname);
+            bundle.putInt("outletid", position);
 
             //Add the bundle to the intent
             i.putExtras(bundle);
@@ -36,7 +37,7 @@ class OutletAdapter : RecyclerView.Adapter<OutletAdapter.ViewHolder> {
             startActivity(holder.viewContext,i,bundle);
             Toast.makeText(holder.viewContext, "" + position + " Index is pressed", Toast.LENGTH_SHORT).show()
         }
-
+        val name = ""+position+" "+outletname
         holder?.outletTextView?.setText(name)
     }
 

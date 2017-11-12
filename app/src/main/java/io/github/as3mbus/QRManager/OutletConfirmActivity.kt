@@ -6,8 +6,13 @@ import android.os.Bundle
 import android.support.v4.content.ContextCompat
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_outlet_confirm.*
+import android.R.id.edit
+import android.content.SharedPreferences
+
+
 
 class OutletConfirmActivity : AppCompatActivity() {
+    val PREFS_NAME = "OutletPrefs"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -17,9 +22,20 @@ class OutletConfirmActivity : AppCompatActivity() {
         outletMessageTextView.text = resources.getString(R.string.outlet_confirmation_message,bundle.getString("outlet"))
         confirmButton.setOnClickListener{
             if(checkPassword()){
-                Toast.makeText(this,"Confirmation Finished",Toast.LENGTH_SHORT).show()
+                Toast.makeText(this,"Confirmation Finished as outlet "+bundle.getString("outlet"),Toast.LENGTH_SHORT).show()
+                // We need an Editor object to make preference changes.
+                // All objects are from android.context.Context
+                val settings = getSharedPreferences(PREFS_NAME, 0)
+                val editor = settings.edit()
+                editor.putInt("outletid", bundle.getInt("outletid"))
+
+                // Commit the edits!
+                editor.apply()
+
                 val i = Intent(this, MainActivity::class.java)
+                i.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                 startActivity(i)
+                finish()
             }
             else{
                 Toast.makeText(this,"invalid password",Toast.LENGTH_SHORT).show()
