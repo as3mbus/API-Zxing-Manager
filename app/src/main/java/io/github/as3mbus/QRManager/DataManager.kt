@@ -28,17 +28,13 @@ class DataManager {
         /* Checks if external storage is available for read and write */
         fun isExternalStorageWritable(): Boolean {
             val state = Environment.getExternalStorageState()
-            return if (Environment.MEDIA_MOUNTED.equals(state)) {
-                true
-            } else false
+            return Environment.MEDIA_MOUNTED==(state)
         }
 
         /* Checks if external storage is available to at least read */
         fun isExternalStorageReadable(): Boolean {
             val state = Environment.getExternalStorageState()
-            return if (Environment.MEDIA_MOUNTED.equals(state) || Environment.MEDIA_MOUNTED_READ_ONLY.equals(state)) {
-                true
-            } else false
+            return Environment.MEDIA_MOUNTED==(state) || Environment.MEDIA_MOUNTED_READ_ONLY==(state)
         }
         fun writePhone(activity: AppCompatActivity?,FILENAME: String, parentFolder: String?,content: ByteArray)
         {
