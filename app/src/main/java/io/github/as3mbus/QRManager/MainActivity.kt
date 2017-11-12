@@ -50,21 +50,21 @@ class MainActivity : AppCompatActivity() {
                 }
 
                 override fun onSuccess(statusCode: Int, headers: Array<out Header>?, responseString: String?) {
-                    val i = Intent(context, RedeemActivity::class.java);
+                    val i = Intent(context, RedeemActivity::class.java)
 
                     //Create the bundle
-                    val bundle = Bundle();
+                    val bundle = Bundle()
 
                     //Add your data to bundle
-                    bundle.putString("outlet", responseString);
+                    bundle.putString("outlet", responseString)
 
                     //Add the bundle to the intent
-                    i.putExtras(bundle);
-                    i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    i.putExtras(bundle)
+                    i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
                     //Fire that second activity
 
 
-                    ContextCompat.startActivity(context, i, bundle);
+                    ContextCompat.startActivity(context, i, bundle)
                 }
             })
 //            BackendAPIRestClient.get("?text=Testing",null, object : TextHttpResponseHandler{
@@ -131,8 +131,7 @@ class MainActivity : AppCompatActivity() {
 
     }
     override fun onActivityResult(requestCode: Int, resultCode: Int, intent: Intent?) {
-        val scanResult: IntentResult?
-        scanResult = IntentIntegrator.parseActivityResult(requestCode, resultCode, intent)
+        val scanResult: IntentResult? = IntentIntegrator.parseActivityResult(requestCode, resultCode, intent)
         if (scanResult != null)
 //            editText.setText(scanResult.contents)
             if (resultCode == DISCOVER_DURATION && requestCode == REQUEST_BLU) {
