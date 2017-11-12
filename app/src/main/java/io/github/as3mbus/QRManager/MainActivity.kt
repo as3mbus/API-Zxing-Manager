@@ -74,8 +74,7 @@ class MainActivity : AppCompatActivity() {
 
     }
     override fun onActivityResult(requestCode:Int, resultCode:Int, intent:Intent?) {
-        val scanResult: IntentResult?
-        scanResult = IntentIntegrator.parseActivityResult(requestCode, resultCode, intent)
+        val scanResult: IntentResult? = IntentIntegrator.parseActivityResult(requestCode, resultCode, intent)
         if (scanResult!= null)
 //            editText.setText(scanResult.contents)
         if (resultCode == DISCOVER_DURATION && requestCode == REQUEST_BLU) {

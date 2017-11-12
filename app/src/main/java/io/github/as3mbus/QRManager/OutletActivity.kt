@@ -7,8 +7,8 @@ import android.support.v7.widget.RecyclerView
 import kotlinx.android.synthetic.main.activity_outlet.*
 
 class OutletActivity : AppCompatActivity() {
-    var layoutMan : RecyclerView.LayoutManager? = null
-    var outletAdapter : RecyclerView.Adapter<OutletAdapter.ViewHolder>? = null
+    private var layoutMan : RecyclerView.LayoutManager? = null
+    private var outletAdapter : RecyclerView.Adapter<OutletAdapter.ViewHolder>? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -1,10 +1,8 @@
 package io.github.as3mbus.QRManager
 
 import android.content.Intent
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.content.SharedPreferences
-
+import android.support.v7.app.AppCompatActivity
 
 
 class SplashActivity : AppCompatActivity() {

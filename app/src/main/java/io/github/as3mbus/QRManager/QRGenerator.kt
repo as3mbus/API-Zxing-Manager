@@ -8,13 +8,13 @@ import com.google.zxing.WriterException
 import com.google.zxing.common.BitMatrix
 
 /**
- * Created by as3mbus on 30/10/17.
- */
+* Created by as3mbus on 30/10/17. GGWP HEYEAYEAYEAAA
+*/
 
 class QRGenerator{
     companion object {
         @Throws(WriterException::class)
-        public fun TextToImageEncode(Value: String): Bitmap? {
+        fun TextToImageEncode(Value: String): Bitmap? {
             val bitMatrix: BitMatrix
             try {
                 bitMatrix = MultiFormatWriter().encode(

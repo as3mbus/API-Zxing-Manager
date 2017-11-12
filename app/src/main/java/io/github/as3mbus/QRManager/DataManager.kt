@@ -7,8 +7,8 @@ import java.io.FileOutputStream
 
 
 /**
- * Created by as3mbus on 31/10/17.
- */
+* Created by as3mbus on 31/10/17. GGWP HEYEAYEAYEAAA
+*/
 
 class DataManager {
     companion object {

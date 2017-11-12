@@ -1,14 +1,10 @@
 package io.github.as3mbus.QRManager
 
 import android.content.Intent
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.support.v4.content.ContextCompat
+import android.support.v7.app.AppCompatActivity
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_outlet_confirm.*
-import android.R.id.edit
-import android.content.SharedPreferences
-
 
 
 class OutletConfirmActivity : AppCompatActivity() {
@@ -43,7 +39,7 @@ class OutletConfirmActivity : AppCompatActivity() {
             }
         }
     }
-    fun checkPassword() : Boolean{
-        return passwordField.text.toString().equals(resources.getString(R.string.password))
+    private fun checkPassword() : Boolean{
+        return passwordField.text.toString()==(resources.getString(R.string.password))
     }
 }
