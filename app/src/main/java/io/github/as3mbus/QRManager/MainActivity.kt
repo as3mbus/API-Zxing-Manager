@@ -6,6 +6,7 @@ import android.net.Uri
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.widget.Toast
+import com.google.zxing.WriterException
 import com.google.zxing.integration.android.IntentIntegrator
 import com.google.zxing.integration.android.IntentResult
 import kotlinx.android.synthetic.main.activity_main.*
@@ -19,8 +20,19 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        callButton.setOnClickListener{
+        button.setOnClickListener{
+            val EditTextValue = editText.text.toString()
+            DataManager.writeInternal(this,"data.txt","hello world")
+            println(EditTextValue)
+            DataManager.readInternal(this, "data.txt")
+            try {
+                val bitmap = QRGenerator.TextToImageEncode(EditTextValue)
 
+                imageView.setImageBitmap(bitmap)
+
+            } catch (e: WriterException) {
+                e.printStackTrace()
+            }
 
         }
         scanButton.setOnClickListener{
