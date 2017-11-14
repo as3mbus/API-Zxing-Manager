@@ -1,9 +1,7 @@
 package io.github.as3mbus.QRManager
 
-import android.bluetooth.BluetoothAdapter
 import android.content.Context
 import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
 import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
@@ -15,14 +13,12 @@ import com.loopj.android.http.AsyncHttpClient
 import com.loopj.android.http.TextHttpResponseHandler
 import cz.msebera.android.httpclient.Header
 import kotlinx.android.synthetic.main.activity_main.*
-import java.io.File
 
 
 class MainActivity : AppCompatActivity() {
     private var context: Context? = null
-    private val REQUEST_ENABLE_BT = 1
-    private val DISCOVER_DURATION = 300
-    private val REQUEST_BLU = 3
+    private var redeemActivate = false
+    var scanResultVar=""
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -98,79 +94,34 @@ class MainActivity : AppCompatActivity() {
 
             val intentIntegr = IntentIntegrator(this)
             intentIntegr.initiateScan()
+            redeemActivate = true
         }
         reportButton.setOnClickListener {
-            DataManager.writePhone(this, "data.txt", null, "hello world".toByteArray())
-            DataManager.readPhone(this, "data.txt", null)
-            val mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter()
-            if (mBluetoothAdapter == null) {
-                Toast.makeText(this, "Device not support bluetooth", Toast.LENGTH_LONG).show()
-                // Device does not support Bluetooth
-            }
-            if (!mBluetoothAdapter.isEnabled) {
-                val enableBtIntent = Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE)
-                startActivityForResult(enableBtIntent, REQUEST_ENABLE_BT)
-            }
-
-            val pairedDevices = mBluetoothAdapter.bondedDevices
-            if (pairedDevices.size > 0) {
-                // There are paired devices. Get the name and address of each paired device.
-                for (device in pairedDevices) {
-                    val deviceName = device.name
-                    val deviceHardwareAddress = device.address // MAC address
-                    print(deviceName + "  " + deviceHardwareAddress)
-                }
-            } else
-                print("no paired device")
-            val discoveryIntent = Intent(BluetoothAdapter.ACTION_REQUEST_DISCOVERABLE)
-            discoveryIntent.putExtra(BluetoothAdapter.EXTRA_DISCOVERABLE_DURATION, DISCOVER_DURATION)
-            startActivityForResult(discoveryIntent, REQUEST_BLU)
-
+            val intentIntegr = IntentIntegrator(this)
+            intentIntegr.initiateScan()
+            redeemActivate = false
         }
 
 
     }
+
     override fun onActivityResult(requestCode: Int, resultCode: Int, intent: Intent?) {
         val scanResult: IntentResult? = IntentIntegrator.parseActivityResult(requestCode, resultCode, intent)
-        if (scanResult != null)
-//            editText.setText(scanResult.contents)
-            if (resultCode == DISCOVER_DURATION && requestCode == REQUEST_BLU) {
-                val i = Intent()
-                i.action = Intent.ACTION_SEND
-                i.type = "*/*"
+        if (scanResult != null) {
+            scanResultVar = scanResult.contents
+            val i = Intent(this.applicationContext, RedeemActivity::class.java)
 
-                val file = File(applicationContext.getExternalFilesDir(null).path, "data.txt")
-//            editText.setText(file.path)
-                i.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(file))
+            //Create the bundle
+            val bundle = Bundle()
 
-                val pm = packageManager
-                val list = pm.queryIntentActivities(i, 0)
-                if (list.size > 0) {
-                    var packageName: String? = null
-                    var className: String? = null
-                    var found = false
+            //Add your data to bundle
+            bundle.putString("outlet", scanResultVar)
 
-                    for (info in list) {
-                        packageName = info.activityInfo.packageName
-                        if (packageName == "com.android.bluetooth") {
-                            className = info.activityInfo.name
-                            found = true
-                            break
-                        }
-                    }
-                    //CHECK BLUETOOTH available or not------------------------------------------------
-                    if (!found) {
-                        Toast.makeText(this, "Bluetooth han't been found", Toast.LENGTH_LONG).show()
-                    } else {
-                        i.setClassName(packageName!!, className!!)
-                        startActivity(i)
-                    }
-                }
-            } else {
-                Toast.makeText(this, "Bluetooth is cancelled", Toast.LENGTH_LONG).show()
-            }
-
-        // else continue with any other code you need in the method
+            //Add the bundle to the intent
+            i.putExtras(bundle)
+            //Fire that second activity
+            startActivity( i, bundle)
+        }
 
     }
 }
