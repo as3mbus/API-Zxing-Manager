@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
 
         val parser = Parser()
 
-        callButton.setOnClickListener {
+//        callButton.setOnClickListener {
 
             //            BackendAPIRestClient.getActive("abc123", object : JsonHttpResponseHandler() {
 //                override fun onSuccess(statusCode: Int, headers: Array<Header>, response: JSONObject) {
@@ -39,30 +39,35 @@ class MainActivity : AppCompatActivity() {
 //                    Toast.makeText(context, message,Toast.LENGTH_SHORT).show()
 //                }
 //            })
-            val client = AsyncHttpClient()
-            client.get("http://api.img4me.com/?text=Testing", object : TextHttpResponseHandler() {
-                override fun onFailure(statusCode: Int, headers: Array<out Header>?, responseString: String?, throwable: Throwable?) {
-                    Toast.makeText(context, "connection failure", Toast.LENGTH_SHORT).show()
-                }
-
-                override fun onSuccess(statusCode: Int, headers: Array<out Header>?, responseString: String?) {
-                    val i = Intent(context, RedeemActivity::class.java)
-
-                    //Create the bundle
-                    val bundle = Bundle()
-
-                    //Add your data to bundle
-                    bundle.putString("outlet", responseString)
-
-                    //Add the bundle to the intent
-                    i.putExtras(bundle)
-                    i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-                    //Fire that second activity
 
 
-                    ContextCompat.startActivity(context, i, bundle)
-                }
-            })
+
+//            val client = AsyncHttpClient()
+//            client.get("http://api.img4me.com/?text=Testing", object : TextHttpResponseHandler() {
+//                override fun onFailure(statusCode: Int, headers: Array<out Header>?, responseString: String?, throwable: Throwable?) {
+//                    Toast.makeText(context, "connection failure", Toast.LENGTH_SHORT).show()
+//                }
+//
+//                override fun onSuccess(statusCode: Int, headers: Array<out Header>?, responseString: String?) {
+//                    val i = Intent(context, RedeemActivity::class.java)
+//
+//                    //Create the bundle
+//                    val bundle = Bundle()
+//
+//                    //Add your data to bundle
+//                    bundle.putString("outlet", responseString)
+//
+//                    //Add the bundle to the intent
+//                    i.putExtras(bundle)
+//                    i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+//                    //Fire that second activity
+//
+//
+//                    ContextCompat.startActivity(context, i, bundle)
+//                }
+//            })
+
+
 //            BackendAPIRestClient.get("?text=Testing",null, object : TextHttpResponseHandler{
 //                override fun onSuccess(statusCode: Int, headers: Array<Header>, response: JSONObject) {
 //                    // If the response is JSONObject instead of expected JSONArray
@@ -89,7 +94,7 @@ class MainActivity : AppCompatActivity() {
 //
 //            ContextCompat.startActivity(this, i, bundle);
 
-        }
+//        }
         scanButton.setOnClickListener {
 
             val intentIntegr = IntentIntegrator(this)
@@ -116,6 +121,7 @@ class MainActivity : AppCompatActivity() {
 
             //Add your data to bundle
             bundle.putString("outlet", scanResultVar)
+            bundle.putBoolean("redeemActivate", redeemActivate)
 
             //Add the bundle to the intent
             i.putExtras(bundle)

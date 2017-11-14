@@ -5,6 +5,9 @@
     <string name="outlet_content">outlet</string>
     <string name="next_button">Next</string>
     <string name="redeem_button">Redeem</string>
+    <string name="activate_button">Activate</string>
+    <string name="activated">Activated Code : </string>
+    <string name="redeemed">Redeemed  Code : </string>
     <string name="outlet_confirmation_message">Hello %1$s!, please contact our staff or administrator to confirm your registration to our service</string>
     <string name="confirm_button">Confirm</string>
     <string name="password">pass</string>

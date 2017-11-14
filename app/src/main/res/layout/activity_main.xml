@@ -2,37 +2,98 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:screenOrientation="landscape"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
     android:orientation="vertical"
-    android:paddingLeft="16dp"
-    android:paddingRight="16dp"
+    android:paddingLeft="0dp"
+    android:paddingRight="0dp"
+    android:screenOrientation="landscape"
     tools:context=".MainActivity">
 
 
     <!-- Include other widget or layout tags here. These are considered
             "child views" or "children" of the linear layout -->
 
-    <Button
-        android:id="@+id/callButton"
+    <TextView
+        android:id="@+id/hellotextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="Generate" />
+        android:layout_margin="10dp"
+        android:text="TextView"
+        android:textSize="30sp" />
 
-    <Button
-        android:id="@+id/scanButton"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="Scan" />
+        android:orientation="vertical"
+        android:padding="10dp">
 
-    <Button
-        android:id="@+id/reportButton"
+        <TextView
+            android:id="@+id/activatedtextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/activated"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/activatedCount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="1000 / 1000"
+            android:textAlignment="center"
+            android:textSize="60sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="Report" />
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/redeemedtextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/redeemed"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/redeemedCount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="1000 / 1000"
+            android:textAlignment="center"
+            android:textSize="60sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp">
+
+        <Button
+            android:id="@+id/reportButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:text="@string/activate_button"
+            android:textSize="24sp" />
+
+        <Button
+            android:id="@+id/scanButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:text="@string/redeem_button"
+            android:textSize="24sp" />
+    </LinearLayout>
+
 </LinearLayout>
