@@ -3,22 +3,18 @@ package io.github.as3mbus.QRManager
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
 import android.widget.Toast
 import com.beust.klaxon.Parser
 import com.google.zxing.integration.android.IntentIntegrator
 import com.google.zxing.integration.android.IntentResult
-import com.loopj.android.http.AsyncHttpClient
-import com.loopj.android.http.TextHttpResponseHandler
-import cz.msebera.android.httpclient.Header
 import kotlinx.android.synthetic.main.activity_main.*
 
 
 class MainActivity : AppCompatActivity() {
     private var context: Context? = null
     private var redeemActivate = false
-    var scanResultVar=""
+    var scanResultVar: String? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -28,7 +24,7 @@ class MainActivity : AppCompatActivity() {
 
 //        callButton.setOnClickListener {
 
-            //            BackendAPIRestClient.getActive("abc123", object : JsonHttpResponseHandler() {
+        //            BackendAPIRestClient.getActive("abc123", object : JsonHttpResponseHandler() {
 //                override fun onSuccess(statusCode: Int, headers: Array<Header>, response: JSONObject) {
 //                    // If the response is JSONObject instead of expected JSONArray
 //
@@ -39,7 +35,6 @@ class MainActivity : AppCompatActivity() {
 //                    Toast.makeText(context, message,Toast.LENGTH_SHORT).show()
 //                }
 //            })
-
 
 
 //            val client = AsyncHttpClient()
@@ -111,23 +106,27 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, intent: Intent?) {
-        val scanResult: IntentResult? = IntentIntegrator.parseActivityResult(requestCode, resultCode, intent)
+        val scanResult: IntentResult?
+        scanResult = IntentIntegrator.parseActivityResult(requestCode, resultCode, intent)
         if (scanResult != null) {
             scanResultVar = scanResult.contents
-            val i = Intent(this.applicationContext, RedeemActivity::class.java)
+            if (scanResultVar!=null){
+                val i = Intent(this.applicationContext, RedeemActivity::class.java)
 
-            //Create the bundle
-            val bundle = Bundle()
+                //Create the bundle
+                val bundle = Bundle()
 
-            //Add your data to bundle
-            bundle.putString("outlet", scanResultVar)
-            bundle.putBoolean("redeemActivate", redeemActivate)
+                //Add your data to bundle
+                bundle.putString("outlet", scanResultVar)
+                bundle.putBoolean("redeemActivate", redeemActivate)
 
-            //Add the bundle to the intent
-            i.putExtras(bundle)
-            //Fire that second activity
-            startActivity( i, bundle)
-        }
+                //Add the bundle to the intent
+                i.putExtras(bundle)
+                //Fire that second activity
+                startActivity(i, bundle)
+            }
 
+        } else
+            Toast.makeText(this, "scan Canceled", Toast.LENGTH_SHORT).show();
     }
 }
