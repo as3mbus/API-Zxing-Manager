@@ -21,17 +21,17 @@ class RedeemActivity : AppCompatActivity() {
             actionButton.text = resources.getText(R.string.redeem_button)
 
         } else {
-            LongOperation().execute(bundle.getString("outlet","ABC"))
+            GenerateQR().execute(bundle.getString("code","ABC"))
             toolbar.setTitle(R.string.activate_title)
             actionButton.text = resources.getText(R.string.activate_button)
 
 
         }
-        outletTextView.text = bundle.getString("outlet")
+        message1TextView.text = bundle.getString("message1")
 
     }
 
-    private inner class LongOperation : AsyncTask<String, Int, Bitmap>() {
+    private inner class GenerateQR : AsyncTask<String, Int, Bitmap>() {
         override fun doInBackground(vararg p0: String?): Bitmap? {
             val param =p0[0]
             var bitmap:Bitmap?=null

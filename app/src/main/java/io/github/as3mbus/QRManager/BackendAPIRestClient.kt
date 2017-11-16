@@ -17,7 +17,7 @@ public class BackendAPIRestClient{
             client.get(getAbsoluteUrl(url), params, responseHandler)
         }
         fun getActive(id: String, responseHandler: AsyncHttpResponseHandler) {
-            client.get(getAbsoluteUrl("active/"+id), null, responseHandler)
+            client.post(getAbsoluteUrl("vochercode/isactivated"),RequestParams("barcode",id) , responseHandler)
         }
 
         fun post(url: String, params: RequestParams?, responseHandler: AsyncHttpResponseHandler) {

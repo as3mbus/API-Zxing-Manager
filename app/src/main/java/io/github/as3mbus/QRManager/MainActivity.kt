@@ -8,7 +8,10 @@ import android.widget.Toast
 import com.beust.klaxon.Parser
 import com.google.zxing.integration.android.IntentIntegrator
 import com.google.zxing.integration.android.IntentResult
+import com.loopj.android.http.JsonHttpResponseHandler
+import cz.msebera.android.httpclient.Header
 import kotlinx.android.synthetic.main.activity_main.*
+import org.json.JSONObject
 
 
 class MainActivity : AppCompatActivity() {
@@ -110,20 +113,32 @@ class MainActivity : AppCompatActivity() {
         scanResult = IntentIntegrator.parseActivityResult(requestCode, resultCode, intent)
         if (scanResult != null) {
             scanResultVar = scanResult.contents
-            if (scanResultVar!=null){
-                val i = Intent(this.applicationContext, RedeemActivity::class.java)
+            if (scanResultVar != null) {
+                Toast.makeText(this.applicationContext,"contacting server",Toast.LENGTH_SHORT).show()
 
-                //Create the bundle
-                val bundle = Bundle()
+                BackendAPIRestClient.getActive(scanResult.contents, object : JsonHttpResponseHandler() {
+                    override fun onSuccess(statusCode: Int, headers: Array<out Header>?, response: JSONObject?) {
+                        super.onSuccess(statusCode, headers, response)
+                        response?.getString("success")
+                        val i = Intent(context, RedeemActivity::class.java)
+                        i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
 
-                //Add your data to bundle
-                bundle.putString("outlet", scanResultVar)
-                bundle.putBoolean("redeemActivate", redeemActivate)
+                        //Create the bundle
+                        val bundle = Bundle()
 
-                //Add the bundle to the intent
-                i.putExtras(bundle)
-                //Fire that second activity
-                startActivity(i, bundle)
+                        //Add your data to bundle
+                        bundle.putString("code", scanResultVar)
+                        bundle.putBoolean("redeemActivate", redeemActivate)
+
+                        //Add the bundle to the intent
+                        i.putExtras(bundle)
+                        //Fire that second activity
+                        startActivity(i, bundle)
+                        Toast.makeText(context,response?.getString("status"),Toast.LENGTH_SHORT).show()
+
+                    }
+                })
+
             }
 
         } else
