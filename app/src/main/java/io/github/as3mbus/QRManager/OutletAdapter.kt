@@ -27,7 +27,7 @@ class OutletAdapter(myDataset: List<String>) : RecyclerView.Adapter<OutletAdapte
 
             //Add your data to bundle
             bundle.putString("outlet", outletname)
-            bundle.putInt("outletid", position)
+            bundle.putInt("outletid", position+1)
 
             //Add the bundle to the intent
             i.putExtras(bundle)
@@ -37,7 +37,7 @@ class OutletAdapter(myDataset: List<String>) : RecyclerView.Adapter<OutletAdapte
             startActivity(holder.viewContext,i,bundle)
             Toast.makeText(holder.viewContext, "" + position + " Index is pressed", Toast.LENGTH_SHORT).show()
         }
-        val name = ""+position+" "+outletname
+        val name = outletname
         holder?.outletTextView?.text = name
     }
 
