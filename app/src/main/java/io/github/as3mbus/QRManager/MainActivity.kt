@@ -21,10 +21,13 @@ class MainActivity : AppCompatActivity() {
     var scanResultVar: String? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         setContentView(R.layout.activity_main)
         context = this.applicationContext
         val settings = getSharedPreferences(PREFS_NAME, 0)
         outletId = settings.getInt("outletId", -1)
+        toolbar.title = resources.getString(R.string.hello_outlet_message,resources.getStringArray(R.array.outlet_name)[outletId-1])
+
         println("===================="+outletId+"=================")
 
 
@@ -183,9 +186,9 @@ class MainActivity : AppCompatActivity() {
 
                         try {
                             activeVoucherCount = response?.getInt("vocherActiveCount")!!
-                            activeVoucherRedeemedCount = response?.getJSONObject("outlets")?.getInt("vocherRedeem")!!
-                            originVoucherCount = response?.getJSONObject("outlets")?.getInt("vocherOriginCount")!!
-                            activeOriginVoucherCount = response?.getJSONObject("outlets")?.getInt("vocherActiveOriginCount")!!
+                            activeVoucherRedeemedCount = response.getJSONObject("outlets")?.getInt("vocherRedeem")!!
+                            originVoucherCount = response.getJSONObject("outlets")?.getInt("vocherOriginCount")!!
+                            activeOriginVoucherCount = response.getJSONObject("outlets")?.getInt("vocherActiveOriginCount")!!
                         } catch (e: Exception) {
                         }
                         activatedCount.text = "" + activeOriginVoucherCount + " / " + originVoucherCount

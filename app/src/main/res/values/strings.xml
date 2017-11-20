@@ -13,4 +13,5 @@
     <string name="outlet_confirmation_message">Hello %1$s!, please contact our staff or administrator to confirm your registration to our service</string>
     <string name="confirm_button">Confirm</string>
     <string name="password">pass</string>
+    <string name="hello_outlet_message">Hello %1$s!</string>
 </resources>

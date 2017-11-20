@@ -14,13 +14,16 @@
     <!-- Include other widget or layout tags here. These are considered
             "child views" or "children" of the linear layout -->
 
-    <TextView
-        android:id="@+id/hellotextView"
+    <android.support.v7.widget.Toolbar
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:text="TextView"
-        android:textSize="30sp" />
+        android:background="@color/colorPrimary"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:title="@string/hello_outlet_message"
+        app:titleTextColor="@color/QRCodeWhiteColor"/>
 
     <LinearLayout
         android:layout_width="match_parent"
