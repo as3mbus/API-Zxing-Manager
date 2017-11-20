@@ -116,31 +116,37 @@ class MainActivity : AppCompatActivity() {
             scanResultVar = scanResult.contents
             if (scanResultVar != null) {
                 Toast.makeText(this.applicationContext, "contacting server", Toast.LENGTH_SHORT).show()
+                val settings = getSharedPreferences(PREFS_NAME, 0)
+                val outletid = settings.getInt("outletid", -1)
                 if (redeemActivate) {
-                    BackendAPIRestClient.getActive(scanResult.contents, object : JsonHttpResponseHandler() {
-                        override fun onSuccess(statusCode: Int, headers: Array<out Header>?, response: JSONObject?) {
+                    BackendAPIRestClient(this.applicationContext).getIsRedeemed(scanResult.contents,outletid, object : JsonHttpResponseHandler() {
+                        override fun onSuccess(statusCode: Int, headers: Array<out Header>?, response: JSONObject) {
                             super.onSuccess(statusCode, headers, response)
 
                             val i = Intent(context, RedeemActivity::class.java)
                             i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-                            val settings = getSharedPreferences(PREFS_NAME, 0)
-                            val outletid = settings.getInt("outletid", -1)
+
                             var success = false
+                            var isExpired = true
                             var isActivated = false
+                            var isRedeemed = true
                             var outletOrigin = -1
                             var expiryDate = ""
-                            var outletName = ""
+                            var outletOriginName = ""
+                            var outletPromo = ""
+                            var usedDate = ""
 
                             try {
-                                success = response?.getBoolean("success")!!
-                                isActivated = response?.getBoolean("isActivated")!!
-                                outletOrigin = response?.getJSONObject("vochercode")?.getInt("outletOrigin")!!
-                                expiryDate = response?.getJSONObject("vochercode")?.getString("expiryDate")!!
-                                outletName = response?.getJSONObject("vochercode")?.getJSONObject("Outlet")?.getString("name")!!
+                                success = response.getBoolean("success")
+                                isExpired = response.getBoolean("isExpired")
+                                isRedeemed = response.getBoolean("isRedeemed")
+                                outletPromo = response.getJSONObject("outletId")?.getString("promo")!!
+                                isActivated = response.getJSONObject("vocher")?.getBoolean("activated")!!
+                                outletOrigin = response.getJSONObject("vocher")?.getInt("outletOrigin")!!
+                                expiryDate = response.getJSONObject("vocher")?.getString("expiryDate")!!
+                                usedDate = response.getJSONObject("outletCode")?.getString("createdAt")!!
                             } catch (e: Exception) {
                             }
-                            val permission = outletOrigin == outletid
-                            val executable = permission.and(!isActivated)
 
                             //Create the bundle
                             val bundle = Bundle()
@@ -149,10 +155,16 @@ class MainActivity : AppCompatActivity() {
                             bundle.putString("code", scanResultVar)
                             bundle.putBoolean("redeemActivate", redeemActivate)
                             bundle.putBoolean("success", success)
-                            bundle.putBoolean("permission", permission)
+                            bundle.putBoolean("isExpired", isExpired)
                             bundle.putBoolean("isActivated", isActivated)
-                            bundle.putString("expirydate", expiryDate)
-                            bundle.putString("outletName", outletName)
+                            bundle.putBoolean("isRedeemed", isRedeemed)
+                            bundle.putInt("outletOrigin",outletOrigin);
+                            bundle.putString("expiryDate", expiryDate)
+                            bundle.putString("outletOriginName", outletOriginName)
+                            bundle.putString("outletPromo", outletPromo)
+                            bundle.putString("usedDate", usedDate)
+
+
 
 
                             //Add the bundle to the intent
@@ -164,30 +176,29 @@ class MainActivity : AppCompatActivity() {
                         }
                     })
                 } else {
-                    BackendAPIRestClient.getActive(scanResult.contents, object : JsonHttpResponseHandler() {
-                        override fun onSuccess(statusCode: Int, headers: Array<out Header>?, response: JSONObject?) {
+                    BackendAPIRestClient(this.applicationContext).getIsActive(scanResult.contents, object : JsonHttpResponseHandler() {
+                        override fun onSuccess(statusCode: Int, headers: Array<out Header>?, response: JSONObject) {
                             super.onSuccess(statusCode, headers, response)
 
                             val i = Intent(context, RedeemActivity::class.java)
                             i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-                            val settings = getSharedPreferences(PREFS_NAME, 0)
-                            val outletid = settings.getInt("outletid", -1)
                             var success = false
+                            var isExpired = true
                             var isActivated = false
                             var outletOrigin = -1
                             var expiryDate = ""
                             var outletName = ""
 
                             try {
-                                success = response?.getBoolean("success")!!
-                                isActivated = response?.getBoolean("isActivated")!!
-                                outletOrigin = response?.getJSONObject("vochercode")?.getInt("outletOrigin")!!
-                                expiryDate = response?.getJSONObject("vochercode")?.getString("expiryDate")!!
-                                outletName = response?.getJSONObject("vochercode")?.getJSONObject("Outlet")?.getString("name")!!
+                                success = response.getBoolean("success")
+                                isExpired = response.getBoolean("isExpired")
+                                isActivated = response.getBoolean("isActivated")
+                                outletOrigin = response.getJSONObject("vochercode")?.getInt("outletOrigin")!!
+                                expiryDate = response.getJSONObject("vochercode")?.getString("expiryDate")!!
+                                outletName = response.getJSONObject("vochercode")?.getJSONObject("Outlet")?.getString("name")!!
                             } catch (e: Exception) {
                             }
                             val permission = outletOrigin == outletid
-                            val executable = permission.and(!isActivated)
 
                             //Create the bundle
                             val bundle = Bundle()
@@ -196,9 +207,10 @@ class MainActivity : AppCompatActivity() {
                             bundle.putString("code", scanResultVar)
                             bundle.putBoolean("redeemActivate", redeemActivate)
                             bundle.putBoolean("success", success)
-                            bundle.putBoolean("permission", permission)
+                            bundle.putBoolean("isExpired", isExpired)
                             bundle.putBoolean("isActivated", isActivated)
-                            bundle.putString("expirydate", expiryDate)
+                            bundle.putBoolean("permission", permission)
+                            bundle.putString("expiryDate", expiryDate)
                             bundle.putString("outletName", outletName)
 
 
