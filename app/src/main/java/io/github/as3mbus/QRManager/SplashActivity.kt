@@ -13,8 +13,8 @@ class SplashActivity : AppCompatActivity() {
         setContentView(R.layout.activity_splash)
         // Restore preferences
         val settings = getSharedPreferences(PREFS_NAME, 0)
-        val outletid = settings.getInt("outletid", -1)
-        if(outletid>-1){
+        val outletId = settings.getInt("outletId", -1)
+        if(outletId>-1){
             val k = Intent(this,MainActivity::class.java)
             startActivity(k)
             finish()

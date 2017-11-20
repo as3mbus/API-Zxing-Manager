@@ -2,7 +2,6 @@ package io.github.as3mbus.QRManager
 
 import android.annotation.SuppressLint
 import android.content.Context
-import android.content.Intent
 import android.graphics.Bitmap
 import android.os.AsyncTask
 import android.os.Bundle
@@ -142,10 +141,10 @@ class RedeemActivity : AppCompatActivity() {
         if(success&&!isExpired&&isActivated&&!isRedeemed){
             actionButton.text = "Redeem"
             actionButton.setOnClickListener {
-                BackendAPIRestClient(this.applicationContext).redeem(bundle.getString("code"),bundle.getInt("outletid"), object : JsonHttpResponseHandler() {
+                BackendAPIRestClient(this.applicationContext).redeem(bundle.getString("code"),bundle.getInt("outletId"), object : JsonHttpResponseHandler() {
                     override fun onSuccess(statusCode: Int, headers: Array<out Header>?, response: JSONObject) {
                         super.onSuccess(statusCode, headers, response)
-                        println("============="+bundle.getString("code")+" "+bundle.getInt("outletid")+"=============")
+                        println("============="+bundle.getString("code")+" "+bundle.getInt("outletId")+"=============")
                         var redeemSuccess = false
                         try {
                             redeemSuccess= response.getBoolean("success")

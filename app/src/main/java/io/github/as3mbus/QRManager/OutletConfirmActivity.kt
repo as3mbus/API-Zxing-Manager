@@ -23,7 +23,7 @@ class OutletConfirmActivity : AppCompatActivity() {
                 // All objects are from android.context.Context
                 val settings = getSharedPreferences(PREFS_NAME, 0)
                 val editor = settings.edit()
-                editor.putInt("outletid", bundle.getInt("outletid"))
+                editor.putInt("outletId", bundle.getInt("outletId"))
 
                 // Commit the edits!
                 editor.apply()

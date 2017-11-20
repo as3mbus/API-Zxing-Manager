@@ -21,10 +21,10 @@ public class BackendAPIRestClient(context: Context) {
         client.post(getAbsoluteUrl("vochercode/isactivated"), RequestParams("barcode", id), responseHandler)
     }
 
-    fun getIsRedeemed(id: String, outletid: Int, responseHandler: AsyncHttpResponseHandler) {
+    fun getIsRedeemed(id: String, outletId: Int, responseHandler: AsyncHttpResponseHandler) {
         val reqParam = RequestParams()
         reqParam.put("barcode", id)
-        reqParam.put("outletId", outletid)
+        reqParam.put("outletId", outletId)
         client.post(getAbsoluteUrl("outletcode/isredeemed"), reqParam, responseHandler)
     }
 
@@ -32,11 +32,14 @@ public class BackendAPIRestClient(context: Context) {
         client.post(getAbsoluteUrl("vochercode/activated"), RequestParams("barcode", id), responseHandler)
     }
 
-    fun redeem(id: String, outletid: Int, responseHandler: AsyncHttpResponseHandler) {
+    fun redeem(id: String, outletId: Int, responseHandler: AsyncHttpResponseHandler) {
         val reqParam = RequestParams()
         reqParam.put("barcode", id)
-        reqParam.put("outletId", outletid)
+        reqParam.put("outletId", outletId)
         client.post(getAbsoluteUrl("outletcode/create"), reqParam, responseHandler)
+    }
+    fun outletStatus(outletId: Int, responseHandler: AsyncHttpResponseHandler) {
+        client.post(getAbsoluteUrl("outlet/detail"), RequestParams("outletId", outletId), responseHandler)
     }
 
     fun post(url: String, params: RequestParams?, responseHandler: AsyncHttpResponseHandler) {

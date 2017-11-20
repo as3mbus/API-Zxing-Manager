@@ -27,7 +27,7 @@ class OutletAdapter(myDataset: List<String>) : RecyclerView.Adapter<OutletAdapte
 
             //Add your data to bundle
             bundle.putString("outlet", outletname)
-            bundle.putInt("outletid", position+1)
+            bundle.putInt("outletId", position+1)
 
             //Add the bundle to the intent
             i.putExtras(bundle)
