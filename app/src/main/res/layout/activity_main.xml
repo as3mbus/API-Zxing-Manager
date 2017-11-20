@@ -76,7 +76,7 @@
         android:paddingTop="10dp">
 
         <Button
-            android:id="@+id/reportButton"
+            android:id="@+id/activateButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
@@ -86,7 +86,7 @@
             android:textSize="24sp" />
 
         <Button
-            android:id="@+id/scanButton"
+            android:id="@+id/redeemButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
