@@ -34,6 +34,11 @@ class MainActivity : AppCompatActivity() {
             intentIntegr.initiateScan()
             activateRedeem = false
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+
 
     }
 
@@ -147,7 +152,7 @@ class MainActivity : AppCompatActivity() {
                 bundle.putBoolean("isExpired", isExpired)
                 bundle.putBoolean("isActivated", isActivated)
                 bundle.putBoolean("isRedeemed", isRedeemed)
-                bundle.putInt("outletOrigin",outletOrigin);
+                bundle.putInt("outletOrigin",outletOrigin)
                 bundle.putString("expiryDate", expiryDate)
                 bundle.putString("outletPromo", outletPromo)
                 bundle.putString("usedDate", usedDate)

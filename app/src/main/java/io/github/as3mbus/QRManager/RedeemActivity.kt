@@ -88,7 +88,6 @@ class RedeemActivity : AppCompatActivity() {
                 BackendAPIRestClient(this.applicationContext).activate(bundle.getString("code"), object : JsonHttpResponseHandler() {
                     override fun onSuccess(statusCode: Int, headers: Array<out Header>?, response: JSONObject) {
                         super.onSuccess(statusCode, headers, response)
-
                         var activateSuccess = false
                         try {
                             activateSuccess= response.getBoolean("success")
@@ -146,13 +145,14 @@ class RedeemActivity : AppCompatActivity() {
                 BackendAPIRestClient(this.applicationContext).redeem(bundle.getString("code"),bundle.getInt("outletid"), object : JsonHttpResponseHandler() {
                     override fun onSuccess(statusCode: Int, headers: Array<out Header>?, response: JSONObject) {
                         super.onSuccess(statusCode, headers, response)
+                        println("============="+bundle.getString("code")+" "+bundle.getInt("outletid")+"=============")
                         var redeemSuccess = false
                         try {
                             redeemSuccess= response.getBoolean("success")
                         } catch (e: Exception) {
                         }
                         if (redeemSuccess){
-                            Toast.makeText(context,"Voucher successfully redeemed",Toast.LENGTH_SHORT).show()
+                            Toast.makeText(context,response.getString("msg"),Toast.LENGTH_SHORT).show()
                             finish()
                         }else
                             Toast.makeText(context,"Something went wrong",Toast.LENGTH_SHORT).show()
