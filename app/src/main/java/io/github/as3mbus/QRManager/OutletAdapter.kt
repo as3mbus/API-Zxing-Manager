@@ -13,10 +13,11 @@ import android.widget.Toast
 
 
 /**
-* Created by as3mbus on 03/11/17. GGWP HEYEAYEAYEAAA
-*/
+ * Created by as3mbus on 03/11/17. GGWP HEYEAYEAYEAAA
+ */
 class OutletAdapter(myDataset: List<String>) : RecyclerView.Adapter<OutletAdapter.ViewHolder>() {
     var values: MutableList<String>? = null
+
     override fun onBindViewHolder(holder: ViewHolder?, position: Int) {
         val outletname = values?.get(position)
         holder?.layout?.setOnClickListener {
@@ -27,19 +28,20 @@ class OutletAdapter(myDataset: List<String>) : RecyclerView.Adapter<OutletAdapte
 
             //Add your data to bundle
             bundle.putString("outlet", outletname)
-            bundle.putInt("outletId", position+1)
+            bundle.putInt("outletId", position + 1)
 
             //Add the bundle to the intent
             i.putExtras(bundle)
 
             //Fire that second activity
 
-            startActivity(holder.viewContext,i,bundle)
-            Toast.makeText(holder.viewContext, "" + position + " Index is pressed", Toast.LENGTH_SHORT).show()
+            startActivity(holder.viewContext, i, bundle)
+            Toast.makeText(holder.viewContext, "Hello " + outletname + "!", Toast.LENGTH_SHORT).show()
         }
         val name = outletname
         holder?.outletTextView?.text = name
     }
+
 
     override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): ViewHolder {
         val inflater = LayoutInflater.from(parent?.context)
@@ -78,6 +80,7 @@ class OutletAdapter(myDataset: List<String>) : RecyclerView.Adapter<OutletAdapte
         values?.removeAt(position)
         notifyItemRemoved(position)
     }
+
     init {
         values = myDataset.toMutableList()
     }

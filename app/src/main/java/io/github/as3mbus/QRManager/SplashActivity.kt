@@ -7,20 +7,22 @@ import android.support.v7.app.AppCompatActivity
 
 class SplashActivity : AppCompatActivity() {
     val PREFS_NAME = "OutletPrefs"
-
+    //read Preference and go to activity depends on preference
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
         // Restore preferences
         val settings = getSharedPreferences(PREFS_NAME, 0)
         val outletId = settings.getInt("outletId", -1)
-        if(outletId>-1){
-            val k = Intent(this,MainActivity::class.java)
+        //if preference found continue to main activity
+        if (outletId > -1) {
+            val k = Intent(this, MainActivity::class.java)
             startActivity(k)
             finish()
         }
-        else{
-            val k = Intent(this,WelcomeActivity::class.java)
+        // else continue to welcome activity
+        else {
+            val k = Intent(this, WelcomeActivity::class.java)
             startActivity(k)
             finish()
         }

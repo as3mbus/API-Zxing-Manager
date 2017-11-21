@@ -10,9 +10,9 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="480"
-   height="800"
-   viewBox="0 0 127 211.66667"
+   width="3783.8789"
+   height="2419.9656"
+   viewBox="0 0 1001.1513 640.28256"
    version="1.1"
    id="svg8"
    inkscape:version="0.92.2 (unknown)"
@@ -38,9 +38,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.98994948"
-     inkscape:cx="1193.0776"
-     inkscape:cy="1383.1842"
+     inkscape:zoom="0.12374369"
+     inkscape:cx="2192.8107"
+     inkscape:cy="775.69307"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -63,7 +63,11 @@
      inkscape:window-height="742"
      inkscape:window-x="53"
      inkscape:window-y="0"
-     inkscape:window-maximized="1" />
+     inkscape:window-maximized="1"
+     fit-margin-top="100"
+     fit-margin-left="100"
+     fit-margin-right="100"
+     fit-margin-bottom="100" />
   <metadata
      id="metadata5">
     <rdf:RDF>
@@ -72,7 +76,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -80,7 +84,7 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(0,-85.333317)">
+     transform="translate(31.290833,-53.842487)">
     <rect
        style="opacity:1;vector-effect:none;fill:#cc0000;fill-opacity:1;stroke:#000000;stroke-width:9.66499996;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
        id="rect819"
@@ -381,44 +385,28 @@
          id="flowPara4898" /></flowRoot>    <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.27700043px;line-height:150%;font-family:'Century Gothic';-inkscape-font-specification:'Century Gothic, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.46987498px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="478.84973"
-       y="196.18243"
+       x="462.97473"
+       y="128.5247"
        id="text4902"><tspan
          sodipodi:role="line"
          id="tspan4900"
-         x="478.84973"
-         y="196.18243"
-         style="stroke-width:0.46987498px">Voucher Tersisa</tspan></text>
+         x="462.97473"
+         y="128.5247"
+         style="stroke-width:0.46987498px">Activated Voucher</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:46.20771027px;line-height:150%;font-family:'Century Gothic';-inkscape-font-specification:'Century Gothic, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.92532122px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="468.9827"
-       y="162.71227"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:23.50261497px;line-height:150%;font-family:'Century Gothic';-inkscape-font-specification:'Century Gothic, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.97927558px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="463.33939"
+       y="157.35161"
        id="text4906"><tspan
          sodipodi:role="line"
          id="tspan4904"
-         x="468.9827"
-         y="162.71227"
-         style="stroke-width:1.92532122px">950</tspan></text>
-    <path
-       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:3.46499991;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m 534.00451,176.72869 33.67595,-33.67596"
-       id="path4908"
-       inkscape:connector-curvature="0" />
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.19569492px;line-height:150%;font-family:'Century Gothic';-inkscape-font-specification:'Century Gothic, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.59148723px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="547.32227"
-       y="177.94272"
-       id="text4912"><tspan
-         sodipodi:role="line"
-         id="tspan4910"
-         x="547.32227"
-         y="177.94272"
-         style="stroke-width:0.59148723px">1000</tspan></text>
+         x="463.33939"
+         y="157.35161"
+         style="stroke-width:0.97927558px">950 / 1000</tspan></text>
     <g
        id="g4938"
-       transform="translate(5.5207253,3.2072343)">
+       transform="translate(5.5207253,38.35902)">
       <rect
          y="202.74786"
          x="450.82709"
@@ -436,10 +424,10 @@
            y="219.39981"
            x="515.37921"
            id="tspan4878-7"
-           sodipodi:role="line">Scan Voucher</tspan></text>
+           sodipodi:role="line">Activate</tspan></text>
     </g>
     <g
-       transform="translate(5.5207253,31.003265)"
+       transform="translate(5.5207253,66.155051)"
        id="g4946">
       <rect
          style="opacity:1;vector-effect:none;fill:#cc0000;fill-opacity:1;stroke:none;stroke-width:1.88617408;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
@@ -458,7 +446,7 @@
            id="tspan4942"
            x="515.37921"
            y="219.39981"
-           style="text-align:center;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:0.59454715px">Lapor Status</tspan></text>
+           style="text-align:center;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:0.59454715px">Redeem</tspan></text>
     </g>
     <rect
        style="opacity:1;vector-effect:none;fill:#cc0000;fill-opacity:1;stroke:#000000;stroke-width:10.06499958;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
@@ -522,274 +510,265 @@
          x="646.5343"
          y="188.48856"
          style="fill:#ffffff;fill-opacity:1;stroke-width:1.50493681px">ZXING</tspan></text>
-    <rect
-       y="85.333321"
-       x="814.5899"
-       height="212.73573"
-       width="128.28937"
-       id="rect5005"
-       style="opacity:1;vector-effect:none;fill:#cc0000;fill-opacity:1;stroke:#000000;stroke-width:10.06499958;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill" />
-    <rect
-       style="opacity:1;vector-effect:none;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:9.360816;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
-       id="rect5007"
-       width="128.28937"
-       height="184.00954"
-       x="814.5899"
-       y="85.333321" />
-    <text
-       id="text5011"
-       y="290.05426"
-       x="878.3927"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:19.1832962px;line-height:150%;font-family:'Century Gothic';-inkscape-font-specification:'Century Gothic, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.79930401px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       xml:space="preserve"><tspan
-         style="text-align:center;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:0.79930401px"
-         y="290.05426"
+    <g
+       id="g1051"
+       transform="translate(-4.5096657,2.1381522)">
+      <rect
+         style="opacity:1;vector-effect:none;fill:#cc0000;fill-opacity:1;stroke:#000000;stroke-width:10.06499958;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
+         id="rect5005"
+         width="128.28937"
+         height="212.73573"
+         x="814.5899"
+         y="85.333321" />
+      <rect
+         y="85.333321"
+         x="814.5899"
+         height="184.00954"
+         width="128.28937"
+         id="rect5007"
+         style="opacity:1;vector-effect:none;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:9.360816;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:19.1832962px;line-height:150%;font-family:'Century Gothic';-inkscape-font-specification:'Century Gothic, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.79930401px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
          x="878.3927"
-         id="tspan5009"
-         sodipodi:role="line">REDEEM</tspan></text>
-    <circle
-       style="opacity:1;vector-effect:none;fill:#cc0000;fill-opacity:1;stroke:none;stroke-width:9.20476151;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
-       id="path5013"
-       cx="925.6637"
-       cy="102.34225"
-       r="15.119047" />
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:23.74617577px;line-height:150%;font-family:'Century Gothic';-inkscape-font-specification:'Century Gothic, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.98942393px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="918.47345"
-       y="111.23557"
-       id="text5017"><tspan
-         sodipodi:role="line"
-         id="tspan5015"
-         x="918.47345"
-         y="111.23557"
-         style="fill:#ffffff;fill-opacity:1;stroke-width:0.98942393px">X</tspan></text>
-    <circle
-       style="opacity:1;vector-effect:none;fill:#ffffff;fill-opacity:1;stroke:#808080;stroke-width:10.42280674;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
-       id="path5019"
-       cx="870.47913"
-       cy="147.6994"
-       r="41.57645" />
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66141796px;line-height:150%;font-family:'Century Gothic';-inkscape-font-specification:'Century Gothic, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.61089242px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="821.75372"
-       y="234.53816"
-       id="text5023"><tspan
-         sodipodi:role="line"
-         id="tspan5021"
-         x="821.75372"
+         y="290.05426"
+         id="text5011"><tspan
+           sodipodi:role="line"
+           id="tspan5009"
+           x="878.3927"
+           y="290.05426"
+           style="text-align:center;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:0.79930401px">REDEEM</tspan></text>
+      <circle
+         r="41.57645"
+         cy="147.6994"
+         cx="878.73462"
+         id="path5019"
+         style="opacity:1;vector-effect:none;fill:#ffffff;fill-opacity:1;stroke:#808080;stroke-width:10.42280674;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill" />
+      <text
+         id="text5023"
          y="234.53816"
-         style="stroke-width:0.61089242px">Outlet</tspan></text>
-    <text
-       id="text5027"
-       y="212.61555"
-       x="821.75372"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66141796px;line-height:150%;font-family:'Century Gothic';-inkscape-font-specification:'Century Gothic, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.61089242px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       xml:space="preserve"><tspan
-         style="stroke-width:0.61089242px"
-         y="212.61555"
          x="821.75372"
-         id="tspan5025"
-         sodipodi:role="line">Kode</tspan></text>
-    <rect
-       style="opacity:1;vector-effect:none;fill:#cc0000;fill-opacity:1;stroke:#000000;stroke-width:10.06499958;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
-       id="rect5029"
-       width="128.28937"
-       height="212.73573"
-       x="726.92548"
-       y="329.08313" />
-    <rect
-       y="329.08313"
-       x="726.92548"
-       height="188.68147"
-       width="128.28937"
-       id="rect5031"
-       style="opacity:1;vector-effect:none;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:9.47890472;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill" />
-    <circle
-       style="opacity:1;vector-effect:none;fill:#cc0000;fill-opacity:1;stroke:none;stroke-width:10;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
-       id="path5035"
-       cx="791.65234"
-       cy="407.64957"
-       r="56.126598" />
-    <path
-       style="fill:none;fill-rule:evenodd;stroke:#ffffff;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m 756.9073,372.90453 69.49009,69.49008"
-       id="path5033"
-       inkscape:connector-curvature="0" />
-    <path
-       inkscape:connector-curvature="0"
-       id="path5037"
-       d="M 826.39739,372.90453 756.9073,442.39461"
-       style="fill:none;fill-rule:evenodd;stroke:#ffffff;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
-    <text
-       id="text5027-6"
-       y="484.57538"
-       x="790.94128"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66141796px;line-height:150%;font-family:'Century Gothic';-inkscape-font-specification:'Century Gothic, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.61089247px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       xml:space="preserve"><tspan
-         style="font-size:9.87777805px;text-align:center;text-anchor:middle;stroke-width:0.61089247px"
-         y="484.57538"
-         x="790.94128"
-         sodipodi:role="line"
-         id="tspan5057">Kode sudah digunakan</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:19.1832962px;line-height:150%;font-family:'Century Gothic';-inkscape-font-specification:'Century Gothic, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.79930401px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="792.33191"
-       y="537.4837"
-       id="text5065"><tspan
-         sodipodi:role="line"
-         id="tspan5063"
-         x="792.33191"
-         y="537.4837"
-         style="text-align:center;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:0.79930401px">Kembali</tspan></text>
-    <rect
-       y="329.08313"
-       x="457.8064"
-       height="212.73573"
-       width="128.28937"
-       id="rect5067"
-       style="opacity:1;vector-effect:none;fill:#cc0000;fill-opacity:1;stroke:#000000;stroke-width:10.06499958;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill" />
-    <rect
-       style="opacity:1;vector-effect:none;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:9.41153049;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
-       id="rect918"
-       width="128.28937"
-       height="186.00877"
-       x="457.8064"
-       y="329.08313" />
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.3499999px;line-height:150%;font-family:'Century Gothic';-inkscape-font-specification:'Century Gothic, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="-7.5595236"
-       y="-113.48216"
-       id="text922"><tspan
-         sodipodi:role="line"
-         id="tspan920"
-         x="-7.5595236"
-         y="-113.48216"
-         style="stroke-width:0.26458332px">- file Reporting Offline/ Online</tspan><tspan
-         sodipodi:role="line"
-         x="-7.5595236"
-         y="-103.95716"
-         style="stroke-width:0.26458332px"
-         id="tspan4620">- </tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66141796px;line-height:150%;font-family:'Century Gothic';-inkscape-font-specification:'Century Gothic, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.61089247px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="790.94128"
-       y="501.58432"
-       id="text4618"><tspan
-         id="tspan4616"
-         sodipodi:role="line"
-         x="790.94128"
-         y="501.58432"
-         style="font-size:9.87777805px;text-align:center;text-anchor:middle;stroke-width:0.61089247px">Tanggal</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.3499999px;line-height:150%;font-family:'Century Gothic';-inkscape-font-specification:'Century Gothic, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="191.09772"
-       y="-121.00956"
-       id="text924"><tspan
-         sodipodi:role="line"
-         id="tspan922"
-         x="191.09772"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66141796px;line-height:150%;font-family:'Century Gothic';-inkscape-font-specification:'Century Gothic, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.61089242px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           style="stroke-width:0.61089242px"
+           y="234.53816"
+           x="821.75372"
+           id="tspan5021"
+           sodipodi:role="line">Outlet</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66141796px;line-height:150%;font-family:'Century Gothic';-inkscape-font-specification:'Century Gothic, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.61089242px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="821.75372"
+         y="212.61555"
+         id="text5027"><tspan
+           sodipodi:role="line"
+           id="tspan5025"
+           x="821.75372"
+           y="212.61555"
+           style="stroke-width:0.61089242px">Kode</tspan></text>
+    </g>
+    <g
+       id="g1065"
+       transform="translate(0,51.31575)">
+      <g
+         transform="translate(83.154763)"
+         id="g999">
+        <rect
+           style="opacity:1;vector-effect:none;fill:#cc0000;fill-opacity:1;stroke:#000000;stroke-width:10.06499958;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
+           id="rect5029"
+           width="128.28937"
+           height="212.73573"
+           x="726.92548"
+           y="329.08313" />
+        <rect
+           y="329.08313"
+           x="726.92548"
+           height="188.68147"
+           width="128.28937"
+           id="rect5031"
+           style="opacity:1;vector-effect:none;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:9.47890472;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill" />
+        <circle
+           style="opacity:1;vector-effect:none;fill:#cc0000;fill-opacity:1;stroke:none;stroke-width:10;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
+           id="path5035"
+           cx="791.65234"
+           cy="407.64957"
+           r="56.126598" />
+        <path
+           style="fill:none;fill-rule:evenodd;stroke:#ffffff;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           d="m 756.9073,372.90453 69.49009,69.49008"
+           id="path5033"
+           inkscape:connector-curvature="0" />
+        <path
+           inkscape:connector-curvature="0"
+           id="path5037"
+           d="M 826.39739,372.90453 756.9073,442.39461"
+           style="fill:none;fill-rule:evenodd;stroke:#ffffff;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+        <text
+           id="text5027-6"
+           y="484.57538"
+           x="790.94128"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66141796px;line-height:150%;font-family:'Century Gothic';-inkscape-font-specification:'Century Gothic, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.61089247px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           xml:space="preserve"><tspan
+             style="font-size:9.87777805px;text-align:center;text-anchor:middle;stroke-width:0.61089247px"
+             y="484.57538"
+             x="790.94128"
+             sodipodi:role="line"
+             id="tspan5057">Kode sudah digunakan</tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:19.1832962px;line-height:150%;font-family:'Century Gothic';-inkscape-font-specification:'Century Gothic, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.79930401px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           x="792.33191"
+           y="537.4837"
+           id="text5065"><tspan
+             sodipodi:role="line"
+             id="tspan5063"
+             x="792.33191"
+             y="537.4837"
+             style="text-align:center;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:0.79930401px">Kembali</tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66141796px;line-height:150%;font-family:'Century Gothic';-inkscape-font-specification:'Century Gothic, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.61089247px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           x="790.94128"
+           y="501.58432"
+           id="text4618"><tspan
+             id="tspan4616"
+             sodipodi:role="line"
+             x="790.94128"
+             y="501.58432"
+             style="font-size:9.87777805px;text-align:center;text-anchor:middle;stroke-width:0.61089247px">Tanggal</tspan></text>
+      </g>
+    </g>
+    <g
+       id="g1040"
+       transform="matrix(2.9585933,0,0,2.9585933,-730.49476,730.04415)">
+      <text
+         id="text924"
          y="-121.00956"
-         style="stroke-width:0.26458332px">Outlet</tspan><tspan
-         sodipodi:role="line"
-         x="191.09772"
-         y="-111.48456"
-         style="stroke-width:0.26458332px"
-         id="tspan926">- id</tspan><tspan
-         sodipodi:role="line"
-         x="191.09772"
-         y="-101.95956"
-         style="stroke-width:0.26458332px"
-         id="tspan928">- name</tspan><tspan
-         sodipodi:role="line"
-         x="191.09772"
-         y="-92.434563"
-         style="stroke-width:0.26458332px"
-         id="tspan930">- promo</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.3499999px;line-height:150%;font-family:'Century Gothic';-inkscape-font-specification:'Century Gothic, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="288.11655"
-       y="-124.48407"
-       id="text934"><tspan
-         sodipodi:role="line"
-         id="tspan932"
-         x="288.11655"
+         x="251.57391"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.3499999px;line-height:150%;font-family:'Century Gothic';-inkscape-font-specification:'Century Gothic, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           style="stroke-width:0.26458332px"
+           y="-121.00956"
+           x="251.57391"
+           id="tspan922"
+           sodipodi:role="line">Outlet</tspan><tspan
+           id="tspan926"
+           style="stroke-width:0.26458332px"
+           y="-111.48456"
+           x="251.57391"
+           sodipodi:role="line">- id</tspan><tspan
+           id="tspan928"
+           style="stroke-width:0.26458332px"
+           y="-101.95956"
+           x="251.57391"
+           sodipodi:role="line">- name</tspan><tspan
+           id="tspan930"
+           style="stroke-width:0.26458332px"
+           y="-92.434563"
+           x="251.57391"
+           sodipodi:role="line">- promo</tspan></text>
+      <text
+         id="text934"
          y="-124.48407"
-         style="stroke-width:0.26458332px">VoucherCode</tspan><tspan
-         sodipodi:role="line"
-         x="288.11655"
-         y="-114.95907"
-         style="stroke-width:0.26458332px"
-         id="tspan936">- code(id)</tspan><tspan
-         sodipodi:role="line"
-         x="288.11655"
-         y="-105.43407"
-         style="stroke-width:0.26458332px"
-         id="tspan938">- outlet origin (foreign key)</tspan><tspan
-         sodipodi:role="line"
-         x="288.11655"
-         y="-95.909073"
-         style="stroke-width:0.26458332px"
-         id="tspan940">- Activated</tspan><tspan
-         sodipodi:role="line"
-         x="288.11655"
-         y="-86.384071"
-         style="stroke-width:0.26458332px"
-         id="tspan942">- Expiry</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.3499999px;line-height:150%;font-family:'Century Gothic';-inkscape-font-specification:'Century Gothic, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="404.91336"
-       y="-59.270294"
-       id="text946"><tspan
-         sodipodi:role="line"
-         id="tspan944"
-         x="404.91336"
+         x="348.59274"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.3499999px;line-height:150%;font-family:'Century Gothic';-inkscape-font-specification:'Century Gothic, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           style="stroke-width:0.26458332px"
+           y="-124.48407"
+           x="348.59274"
+           id="tspan932"
+           sodipodi:role="line">VoucherCode</tspan><tspan
+           id="tspan936"
+           style="stroke-width:0.26458332px"
+           y="-114.95907"
+           x="348.59274"
+           sodipodi:role="line">- code(id)</tspan><tspan
+           id="tspan938"
+           style="stroke-width:0.26458332px"
+           y="-105.43407"
+           x="348.59274"
+           sodipodi:role="line">- outlet origin (foreign key)</tspan><tspan
+           id="tspan940"
+           style="stroke-width:0.26458332px"
+           y="-95.909073"
+           x="348.59274"
+           sodipodi:role="line">- Activated</tspan><tspan
+           id="tspan942"
+           style="stroke-width:0.26458332px"
+           y="-86.384071"
+           x="348.59274"
+           sodipodi:role="line">- Expiry</tspan></text>
+      <text
+         id="text946"
          y="-59.270294"
-         style="stroke-width:0.26458332px">OutletCode</tspan><tspan
-         sodipodi:role="line"
-         x="404.91336"
-         y="-49.745293"
-         style="stroke-width:0.26458332px"
-         id="tspan948">- code id</tspan><tspan
-         sodipodi:role="line"
-         x="404.91336"
-         y="-40.220295"
-         style="stroke-width:0.26458332px"
-         id="tspan950">- outlet id</tspan><tspan
-         sodipodi:role="line"
-         x="404.91336"
-         y="-30.695295"
-         style="stroke-width:0.26458332px"
-         id="tspan952">- used</tspan><tspan
-         sodipodi:role="line"
-         x="404.91336"
-         y="-21.170296"
-         style="stroke-width:0.26458332px"
-         id="tspan954">- used date</tspan></text>
-    <path
-       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 225.04094,-113.22936 h 37.68501 v 7.18689 h 19.77795"
-       id="path956"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cccc" />
-    <path
-       sodipodi:nodetypes="cccc"
-       inkscape:connector-curvature="0"
-       id="path4647"
-       d="m 225.04094,-113.22936 h 20.04522 l 0,71.064308 h 153.41272"
-       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
-    <path
-       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 333.2851,-117.77294 44.09948,0 v 68.124342 l 21.1143,0"
-       id="path4649"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cccc" />
+         x="465.38956"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.3499999px;line-height:150%;font-family:'Century Gothic';-inkscape-font-specification:'Century Gothic, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           style="stroke-width:0.26458332px"
+           y="-59.270294"
+           x="465.38956"
+           id="tspan944"
+           sodipodi:role="line">OutletCode</tspan><tspan
+           id="tspan948"
+           style="stroke-width:0.26458332px"
+           y="-49.745293"
+           x="465.38956"
+           sodipodi:role="line">- code id</tspan><tspan
+           id="tspan950"
+           style="stroke-width:0.26458332px"
+           y="-40.220295"
+           x="465.38956"
+           sodipodi:role="line">- outlet id</tspan><tspan
+           id="tspan952"
+           style="stroke-width:0.26458332px"
+           y="-30.695295"
+           x="465.38956"
+           sodipodi:role="line">- used</tspan><tspan
+           id="tspan954"
+           style="stroke-width:0.26458332px"
+           y="-21.170296"
+           x="465.38956"
+           sodipodi:role="line">- used date</tspan></text>
+      <path
+         sodipodi:nodetypes="cccc"
+         inkscape:connector-curvature="0"
+         id="path956"
+         d="m 285.51713,-113.22936 h 37.68501 v 7.18689 h 19.77795"
+         style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <path
+         style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 285.51713,-113.22936 h 20.04522 v 71.064308 h 153.41272"
+         id="path4647"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="cccc" />
+      <path
+         sodipodi:nodetypes="cccc"
+         inkscape:connector-curvature="0"
+         id="path4649"
+         d="m 393.76129,-117.77294 h 44.09948 v 68.124342 h 21.1143"
+         style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    </g>
+    <text
+       id="text963"
+       y="181.0634"
+       x="462.97473"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.27700043px;line-height:150%;font-family:'Century Gothic';-inkscape-font-specification:'Century Gothic, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.46987498px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         style="stroke-width:0.46987498px"
+         y="181.0634"
+         x="462.97473"
+         id="tspan961"
+         sodipodi:role="line">Redeemed Voucher</tspan></text>
+    <text
+       id="text967"
+       y="209.8903"
+       x="463.33939"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:23.50261497px;line-height:150%;font-family:'Century Gothic';-inkscape-font-specification:'Century Gothic, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.97927558px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         style="stroke-width:0.97927558px"
+         y="209.8903"
+         x="463.33939"
+         id="tspan965"
+         sodipodi:role="line">200 / 300</tspan></text>
   </g>
 </svg>

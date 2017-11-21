@@ -14,7 +14,7 @@ import kotlinx.android.synthetic.main.activity_redeem.*
 import org.json.JSONObject
 
 class RedeemActivity : AppCompatActivity() {
-    var context :Context? = null
+    var context: Context? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         context = this.applicationContext
@@ -31,6 +31,7 @@ class RedeemActivity : AppCompatActivity() {
 
     }
 
+    // async task to generate QR Code
     @SuppressLint("StaticFieldLeak")
     private inner class GenerateQR : AsyncTask<String, Int, Bitmap>() {
         override fun doInBackground(vararg p0: String?): Bitmap? {
@@ -50,7 +51,8 @@ class RedeemActivity : AppCompatActivity() {
         }
     }
 
-    private fun activateLookAndFeel(bundle: Bundle){
+    //handle look and feel for activation
+    private fun activateLookAndFeel(bundle: Bundle) {
         GenerateQR().execute(bundle.getString("code", ""))
         toolbar.setTitle(R.string.activate_title)
         actionButton.text = resources.getText(R.string.activate_button)
@@ -81,7 +83,7 @@ class RedeemActivity : AppCompatActivity() {
             message1TextView.text = resources.getString(R.string.voucher_not_found)
             message2TextView.text = ""
         }
-        if(success&&!isExpired&&!isActivated&&permission){
+        if (success && !isExpired && !isActivated && permission) {
             actionButton.text = "Activate"
             actionButton.setOnClickListener {
                 BackendAPIRestClient(this.applicationContext).activate(bundle.getString("code"), object : JsonHttpResponseHandler() {
@@ -89,18 +91,18 @@ class RedeemActivity : AppCompatActivity() {
                         super.onSuccess(statusCode, headers, response)
                         var activateSuccess = false
                         try {
-                            activateSuccess= response.getBoolean("success")
+                            activateSuccess = response.getBoolean("success")
                         } catch (e: Exception) {
                         }
-                        if (activateSuccess){
-                            Toast.makeText(context,"Voucher activation success",Toast.LENGTH_SHORT).show()
+                        if (activateSuccess) {
+                            Toast.makeText(context, "Voucher activation success", Toast.LENGTH_SHORT).show()
                             finish()
-                        }else
-                            Toast.makeText(context,"Something went wrong",Toast.LENGTH_SHORT).show()
+                        } else
+                            Toast.makeText(context, "Something went wrong", Toast.LENGTH_SHORT).show()
                     }
                 })
             }
-        }else{
+        } else {
             actionButton.text = "Back"
             actionButton.setOnClickListener {
                 finish()
@@ -109,7 +111,8 @@ class RedeemActivity : AppCompatActivity() {
 
     }
 
-    private fun redeemLookAndFeel(bundle: Bundle){
+    //handle look and feel for redeem
+    private fun redeemLookAndFeel(bundle: Bundle) {
         toolbar.setTitle(R.string.redeem_title)
         actionButton.text = resources.getText(R.string.redeem_button)
         val success = bundle.getBoolean("success", false)
@@ -128,7 +131,7 @@ class RedeemActivity : AppCompatActivity() {
                     }
                 } else {
                     message1TextView.text = resources.getString(R.string.redeem_fail_not_activated)
-                    message2TextView.text = resources.getStringArray(R.array.outlet_name)[bundle.getInt("outletOrigin")-1]
+                    message2TextView.text = resources.getStringArray(R.array.outlet_name)[bundle.getInt("outletOrigin") - 1]
                 }
             } else {
                 message1TextView.text = resources.getString(R.string.voucher_expired)
@@ -138,27 +141,27 @@ class RedeemActivity : AppCompatActivity() {
             message1TextView.text = resources.getString(R.string.voucher_not_found)
             message2TextView.text = ""
         }
-        if(success&&!isExpired&&isActivated&&!isRedeemed){
+        if (success && !isExpired && isActivated && !isRedeemed) {
             actionButton.text = "Redeem"
             actionButton.setOnClickListener {
-                BackendAPIRestClient(this.applicationContext).redeem(bundle.getString("code"),bundle.getInt("outletId"), object : JsonHttpResponseHandler() {
+                BackendAPIRestClient(this.applicationContext).redeem(bundle.getString("code"), bundle.getInt("outletId"), object : JsonHttpResponseHandler() {
                     override fun onSuccess(statusCode: Int, headers: Array<out Header>?, response: JSONObject) {
                         super.onSuccess(statusCode, headers, response)
-                        println("============="+bundle.getString("code")+" "+bundle.getInt("outletId")+"=============")
+                        println("=============" + bundle.getString("code") + " " + bundle.getInt("outletId") + "=============")
                         var redeemSuccess = false
                         try {
-                            redeemSuccess= response.getBoolean("success")
+                            redeemSuccess = response.getBoolean("success")
                         } catch (e: Exception) {
                         }
-                        if (redeemSuccess){
-                            Toast.makeText(context,response.getString("msg"),Toast.LENGTH_SHORT).show()
+                        if (redeemSuccess) {
+                            Toast.makeText(context, response.getString("msg"), Toast.LENGTH_SHORT).show()
                             finish()
-                        }else
-                            Toast.makeText(context,"Something went wrong",Toast.LENGTH_SHORT).show()
+                        } else
+                            Toast.makeText(context, "Something went wrong", Toast.LENGTH_SHORT).show()
                     }
                 })
             }
-        }else{
+        } else {
             actionButton.text = "Back"
             actionButton.setOnClickListener {
                 finish()

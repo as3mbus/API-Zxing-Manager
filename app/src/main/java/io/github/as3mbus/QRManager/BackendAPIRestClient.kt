@@ -17,10 +17,12 @@ public class BackendAPIRestClient(context: Context) {
         client.get(getAbsoluteUrl(url), params, responseHandler)
     }
 
+    //isActive API call
     fun getIsActive(id: String, responseHandler: AsyncHttpResponseHandler) {
         client.post(getAbsoluteUrl("vochercode/isactivated"), RequestParams("barcode", id), responseHandler)
     }
 
+    //isRedeemed API call
     fun getIsRedeemed(id: String, outletId: Int, responseHandler: AsyncHttpResponseHandler) {
         val reqParam = RequestParams()
         reqParam.put("barcode", id)
@@ -28,16 +30,20 @@ public class BackendAPIRestClient(context: Context) {
         client.post(getAbsoluteUrl("outletcode/isredeemed"), reqParam, responseHandler)
     }
 
+    //activate API call
     fun activate(id: String, responseHandler: AsyncHttpResponseHandler) {
         client.post(getAbsoluteUrl("vochercode/activated"), RequestParams("barcode", id), responseHandler)
     }
 
+    //redeem API call
     fun redeem(id: String, outletId: Int, responseHandler: AsyncHttpResponseHandler) {
         val reqParam = RequestParams()
         reqParam.put("barcode", id)
         reqParam.put("outletId", outletId)
         client.post(getAbsoluteUrl("outletcode/create"), reqParam, responseHandler)
     }
+
+    //outlet detail API call
     fun outletStatus(outletId: Int, responseHandler: AsyncHttpResponseHandler) {
         client.post(getAbsoluteUrl("outlet/detail"), RequestParams("outletId", outletId), responseHandler)
     }

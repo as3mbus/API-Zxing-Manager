@@ -15,10 +15,11 @@ class OutletConfirmActivity : AppCompatActivity() {
         setContentView(R.layout.activity_outlet_confirm)
         val bundle = intent.extras
 
-        outletMessageTextView.text = resources.getString(R.string.outlet_confirmation_message,bundle.getString("outlet"))
-        confirmButton.setOnClickListener{
-            if(checkPassword()){
-                Toast.makeText(this,"Confirmation Finished as outlet "+bundle.getString("outlet"),Toast.LENGTH_SHORT).show()
+        outletMessageTextView.text = resources.getString(R.string.outlet_confirmation_message, bundle.getString("outlet"))
+        confirmButton.setOnClickListener {
+            //if password correct continue to main activity and save it's preference
+            if (checkPassword()) {
+                Toast.makeText(this, "Confirmation Finished as outlet " + bundle.getString("outlet"), Toast.LENGTH_SHORT).show()
                 // We need an Editor object to make preference changes.
                 // All objects are from android.context.Context
                 val settings = getSharedPreferences(PREFS_NAME, 0)
@@ -33,13 +34,16 @@ class OutletConfirmActivity : AppCompatActivity() {
                 startActivity(i)
                 finish()
             }
-            else{
-                Toast.makeText(this,"invalid password",Toast.LENGTH_SHORT).show()
+            //else display toast message and empty password field
+            else {
+                Toast.makeText(this, "invalid password", Toast.LENGTH_SHORT).show()
                 passwordField.setText("")
             }
         }
     }
-    private fun checkPassword() : Boolean{
-        return passwordField.text.toString()==(resources.getString(R.string.password))
+
+    //verify password
+    private fun checkPassword(): Boolean {
+        return passwordField.text.toString() == (resources.getString(R.string.password))
     }
 }
