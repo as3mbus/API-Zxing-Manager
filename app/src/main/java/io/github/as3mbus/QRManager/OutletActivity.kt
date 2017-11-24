@@ -19,7 +19,8 @@ class OutletActivity : AppCompatActivity() {
         layoutMan?.isAutoMeasureEnabled = true
         outletRecyclerView.layoutManager = layoutMan
         val data = this.resources.getStringArray(R.array.outlet_name)
-        outletAdapter = OutletAdapter(data.toList())
+        val imgid = this.resources.obtainTypedArray(R.array.outlet_image)
+        outletAdapter = OutletAdapter(data.toList(),imgid)
         outletRecyclerView.adapter = outletAdapter
 
 

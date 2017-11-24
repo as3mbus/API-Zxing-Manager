@@ -15,6 +15,8 @@ class OutletConfirmActivity : AppCompatActivity() {
         setContentView(R.layout.activity_outlet_confirm)
         val bundle = intent.extras
 
+        imageView6.setImageResource(bundle.getInt("imageId"))
+
         outletMessageTextView.text = resources.getString(R.string.outlet_confirmation_message, bundle.getString("outlet"))
         confirmButton.setOnClickListener {
             //if password correct continue to main activity and save it's preference
