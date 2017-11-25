@@ -53,7 +53,6 @@ class RedeemActivity : AppCompatActivity() {
 
     //handle look and feel for activation
     private fun activateLookAndFeel(bundle: Bundle) {
-        GenerateQR().execute(bundle.getString("code", ""))
         toolbar.setTitle(R.string.activate_title)
         actionButton.text = resources.getText(R.string.activate_button)
         val success = bundle.getBoolean("success", false)
@@ -65,6 +64,7 @@ class RedeemActivity : AppCompatActivity() {
             if (!isExpired) {
                 if (!isActivated) {
                     if (permission) {
+                        GenerateQR().execute(bundle.getString("code", ""))
                         message1TextView.text = resources.getString(R.string.activation_confirmation)
                         message2TextView.text = bundle.getString("expiryDate", "error").substring(0, 10)
                     } else {
@@ -103,6 +103,7 @@ class RedeemActivity : AppCompatActivity() {
                 })
             }
         } else {
+            actionImageView.setImageResource(R.drawable.x)
             actionButton.text = "Back"
             actionButton.setOnClickListener {
                 finish()
@@ -142,6 +143,7 @@ class RedeemActivity : AppCompatActivity() {
             message2TextView.text = ""
         }
         if (success && !isExpired && isActivated && !isRedeemed) {
+            actionImageView.setImageDrawable(resources.obtainTypedArray(R.array.outlet_image).getDrawable(bundle.getInt("outletId")-1))
             actionButton.text = "Redeem"
             actionButton.setOnClickListener {
                 BackendAPIRestClient(this.applicationContext).redeem(bundle.getString("code"), bundle.getInt("outletId"), object : JsonHttpResponseHandler() {
@@ -162,6 +164,7 @@ class RedeemActivity : AppCompatActivity() {
                 })
             }
         } else {
+            actionImageView.setImageResource(R.drawable.x)
             actionButton.text = "Back"
             actionButton.setOnClickListener {
                 finish()
