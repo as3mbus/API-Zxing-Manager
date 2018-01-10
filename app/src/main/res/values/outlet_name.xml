@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="outlet_name">
+        <item>Outlet 1</item>
+        <item>Outlet 2</item>
+        <item>Outlet 3</item>
+        <item>Outlet 4</item>
+        <item>Outlet 5</item>
+        <item>Outlet 6</item>
+        <item>Outlet 7</item>
+        <item>Outlet 8</item>
+        <item>Outlet 9</item>
+        <item>Outlet 10</item>
+
+    </string-array>
+</resources>

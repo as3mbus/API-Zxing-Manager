@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="outlet_image">
+        <item>@drawable/x</item>
+        <item>@drawable/x</item>
+        <item>@drawable/x</item>
+        <item>@drawable/x</item>
+        <item>@drawable/x</item>
+        <item>@drawable/x</item>
+        <item>@drawable/x</item>
+        <item>@drawable/x</item>
+        <item>@drawable/x</item>
+        <item>@drawable/x</item>
+    </array>
+    <drawable name="company_logo">@drawable/x</drawable>
+</resources>
