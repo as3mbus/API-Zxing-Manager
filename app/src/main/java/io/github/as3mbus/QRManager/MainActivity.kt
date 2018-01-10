@@ -1,5 +1,6 @@
 package io.github.as3mbus.QRManager
 
+import android.app.Dialog
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
@@ -25,11 +26,18 @@ class MainActivity : AppCompatActivity() {
 
     var scanResultVar: String? = null
 
+    var dialog: Dialog? = null
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         setContentView(R.layout.activity_main)
         context = this.applicationContext
+        dialog = Dialog(this)
+        dialog?.setCancelable(false)
+        dialog?.setContentView(R.layout.dialog_connecting);
+
         val settings = getSharedPreferences(PREFS_NAME, 0)
         outletId = settings.getInt("outletId", -1)
         toolbar.title = resources.getString(R.string.hello_outlet_message, resources.getStringArray(R.array.outlet_name)[outletId - 1])
@@ -120,7 +128,15 @@ class MainActivity : AppCompatActivity() {
                 //Fire that second activity
                 startActivity(i, bundle)
 
+                dialog?.dismiss()
             }
+
+            override fun onStart() {
+                super.onStart()
+                dialog?.show()
+
+            }
+
         })
     }
 
@@ -178,7 +194,15 @@ class MainActivity : AppCompatActivity() {
                 //Fire that second activity
                 startActivity(i, bundle)
 
+                dialog?.dismiss()
             }
+
+            override fun onStart() {
+                super.onStart()
+                dialog?.show()
+
+            }
+
         })
     }
 
@@ -206,7 +230,15 @@ class MainActivity : AppCompatActivity() {
                         activatedCount.text = "" + activeOriginVoucherCount + " / " + originVoucherCount
                         redeemedCount.text = "" + activeVoucherRedeemedCount + " / " + activeVoucherCount
 
+                        dialog?.dismiss()
                     }
+
+                    override fun onStart() {
+                        super.onStart()
+                        dialog?.show()
+
+                    }
+
                 }
         )
     }

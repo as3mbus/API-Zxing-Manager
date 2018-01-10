@@ -1,6 +1,7 @@
 package io.github.as3mbus.QRManager
 
 import android.annotation.SuppressLint
+import android.app.Dialog
 import android.content.Context
 import android.graphics.Bitmap
 import android.os.AsyncTask
@@ -16,8 +17,16 @@ import org.json.JSONObject
 class RedeemActivity : AppCompatActivity() {
     var context: Context? = null
 
+    var dialog: Dialog? = null
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         context = this.applicationContext
+
+        dialog = Dialog(this)
+        dialog?.setCancelable(false)
+        dialog?.setContentView(R.layout.dialog_connecting);
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_redeem)
 
@@ -99,7 +108,15 @@ class RedeemActivity : AppCompatActivity() {
                             finish()
                         } else
                             Toast.makeText(context, "Something went wrong", Toast.LENGTH_SHORT).show()
+                        dialog?.dismiss()
                     }
+
+                    override fun onStart() {
+                        super.onStart()
+                        dialog?.show()
+
+                    }
+
                 })
             }
         } else {
@@ -160,7 +177,15 @@ class RedeemActivity : AppCompatActivity() {
                             finish()
                         } else
                             Toast.makeText(context, "Something went wrong", Toast.LENGTH_SHORT).show()
+                        dialog?.dismiss()
                     }
+
+                    override fun onStart() {
+                        super.onStart()
+                        dialog?.show()
+
+                    }
+
                 })
             }
         } else {
