@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="host_example">http://192.168.1.1:2000/</string>
+    <string name="password_example">thisisapppassword</string>
+    <string-array name="outlet_password_example">
+        <item>ABC12</item>
+        <item>ABC12</item>
+        <item>ABC12</item>
+        <item>ABC12</item>
+        <item>ABC12</item>
+        <item>ABC12</item>
+        <item>ABC12</item>
+        <item>ABC12</item>
+        <item>ABC12</item>
+        <item>ABC12</item>
+    </string-array>
+</resources>
