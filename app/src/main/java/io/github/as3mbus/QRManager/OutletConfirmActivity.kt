@@ -9,14 +9,14 @@ import kotlinx.android.synthetic.main.activity_outlet_confirm.*
 
 class OutletConfirmActivity : AppCompatActivity() {
     val PREFS_NAME = "OutletPrefs"
-
+    var outletId = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_outlet_confirm)
         val bundle = intent.extras
 
         imageView6.setImageResource(bundle.getInt("imageId"))
-
+        outletId=bundle.getInt("outletId")
         outletMessageTextView.text = resources.getString(R.string.outlet_confirmation_message, bundle.getString("outlet"))
         confirmButton.setOnClickListener {
             //if password correct continue to main activity and save it's preference
@@ -46,6 +46,6 @@ class OutletConfirmActivity : AppCompatActivity() {
 
     //verify password
     private fun checkPassword(): Boolean {
-        return passwordField.text.toString() == (resources.getString(R.string.password))
+        return passwordField.text.toString() == (resources.getStringArray(R.array.outlet_password)[outletId-1])
     }
 }
