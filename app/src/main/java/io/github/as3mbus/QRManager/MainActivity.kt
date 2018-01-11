@@ -1,13 +1,16 @@
 package io.github.as3mbus.QRManager
 
+import android.annotation.SuppressLint
+import android.app.Activity
+import android.app.AlertDialog
 import android.app.Dialog
 import android.content.Context
+import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.widget.Toast
 import com.google.zxing.integration.android.IntentIntegrator
-import com.google.zxing.integration.android.IntentResult
 import com.loopj.android.http.JsonHttpResponseHandler
 import cz.msebera.android.httpclient.Header
 import kotlinx.android.synthetic.main.activity_main.*
@@ -33,7 +36,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         setContentView(R.layout.activity_main)
-        context = this.applicationContext
+        context = this
         dialog = Dialog(this)
         dialog?.setCancelable(false)
         dialog?.setContentView(R.layout.dialog_connecting);
@@ -63,30 +66,60 @@ class MainActivity : AppCompatActivity() {
 
     //handle scan result
     override fun onActivityResult(requestCode: Int, resultCode: Int, intent: Intent?) {
-        val scanResult: IntentResult?
-        scanResult = IntentIntegrator.parseActivityResult(requestCode, resultCode, intent)
-        if (scanResult != null) {
-            scanResultVar = scanResult.contents
-            if (scanResultVar != null) {
-                Toast.makeText(this.applicationContext, "contacting server", Toast.LENGTH_SHORT).show()
-                if (activateRedeem)
-                    activateRequest(scanResult.contents, outletId)
-                else
-                    redeemRequest(scanResult.contents, outletId)
-            }
-        } else
-            Toast.makeText(this, "scan Canceled", Toast.LENGTH_SHORT).show()
+        println("REQUEST CODE = " + requestCode)
+        println("RESULT CODE = " + resultCode)
+        if (requestCode == 49374) {
+            val scanResult = IntentIntegrator.parseActivityResult(requestCode, resultCode, intent)
+            if (scanResult != null) {
+                scanResultVar = scanResult.contents
+                if (scanResultVar != null) {
+                    Toast.makeText(this.applicationContext, "contacting server", Toast.LENGTH_SHORT).show()
+                    if (activateRedeem)
+                        activateRequest(scanResult.contents, outletId)
+                    else
+                        redeemRequest(scanResult.contents, outletId)
+                }
+            } else
+                Toast.makeText(this, "scan Canceled", Toast.LENGTH_SHORT).show()
+        } else if (requestCode == 1 && resultCode == Activity.RESULT_OK) {
+            print("SHOW DIALOG")
+            AlertDialog.Builder(this)
+                    .setTitle("")
+                    .setMessage("Activation Completed Successfully")
+                    .setPositiveButton(
+                            "Close",
+                            DialogInterface.OnClickListener { dialog, which ->
+                                dialog.dismiss()
+                            }
+                    )
+                    .show()
+
+        } else if (requestCode == 2 && resultCode == Activity.RESULT_OK) {
+            print("SHOW DIALOG")
+            AlertDialog.Builder(this)
+                    .setTitle("")
+                    .setMessage("Voucher Redeemed Successfully")
+                    .setPositiveButton(
+                            "Close",
+                            DialogInterface.OnClickListener { dialog, which ->
+                                dialog.dismiss()
+                            }
+                    )
+                    .show()
+        }
+
     }
 
 
     //handle scan result to activate code
     private fun activateRequest(code: String, outletId: Int) {
         BackendAPIRestClient(this.applicationContext).getIsActive(code, object : JsonHttpResponseHandler() {
+            @SuppressLint("RestrictedApi")
             override fun onSuccess(statusCode: Int, headers: Array<out Header>?, response: JSONObject) {
                 super.onSuccess(statusCode, headers, response)
+                dialog?.dismiss()
 
                 val i = Intent(context, RedeemActivity::class.java)
-                i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
                 //set default value pre-parse
                 var success = false
                 var isExpired = true
@@ -126,15 +159,14 @@ class MainActivity : AppCompatActivity() {
                 //Add the bundle to the intent
                 i.putExtras(bundle)
                 //Fire that second activity
-                startActivity(i, bundle)
+                //noinspection RestrictedApi
+                startActivityForResult(i, 1, bundle)
 
-                dialog?.dismiss()
             }
 
             override fun onStart() {
                 super.onStart()
                 dialog?.show()
-
             }
 
         })
@@ -144,11 +176,11 @@ class MainActivity : AppCompatActivity() {
     private fun redeemRequest(code: String, outletId: Int) {
         BackendAPIRestClient(this.applicationContext).getIsRedeemed(code, outletId, object : JsonHttpResponseHandler() {
 
+            @SuppressLint("RestrictedApi")
             override fun onSuccess(statusCode: Int, headers: Array<out Header>?, response: JSONObject) {
                 super.onSuccess(statusCode, headers, response)
 
                 val i = Intent(context, RedeemActivity::class.java)
-                i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
                 //set default value pre-parse
                 var success = false
                 var isExpired = true
@@ -192,7 +224,8 @@ class MainActivity : AppCompatActivity() {
                 //Add the bundle to the intent
                 i.putExtras(bundle)
                 //Fire that second activity
-                startActivity(i, bundle)
+                //noinspection RestrictedApi
+                startActivityForResult(i, 2, bundle)
 
                 dialog?.dismiss()
             }
@@ -200,7 +233,6 @@ class MainActivity : AppCompatActivity() {
             override fun onStart() {
                 super.onStart()
                 dialog?.show()
-
             }
 
         })
@@ -212,6 +244,7 @@ class MainActivity : AppCompatActivity() {
                 outletId,
                 object : JsonHttpResponseHandler() {
                     override fun onSuccess(statusCode: Int, headers: Array<out Header>?, response: JSONObject?) {
+                        dialog?.dismiss()
 
                         //set default value pre-parse
                         var originVoucherCount = 0
@@ -230,7 +263,6 @@ class MainActivity : AppCompatActivity() {
                         activatedCount.text = "" + activeOriginVoucherCount + " / " + originVoucherCount
                         redeemedCount.text = "" + activeVoucherRedeemedCount + " / " + activeVoucherCount
 
-                        dialog?.dismiss()
                     }
 
                     override fun onStart() {

@@ -14,6 +14,7 @@ import cz.msebera.android.httpclient.Header
 import kotlinx.android.synthetic.main.activity_redeem.*
 import org.json.JSONObject
 
+
 class RedeemActivity : AppCompatActivity() {
     var context: Context? = null
 
@@ -98,17 +99,19 @@ class RedeemActivity : AppCompatActivity() {
                 BackendAPIRestClient(this.applicationContext).activate(bundle.getString("code"), object : JsonHttpResponseHandler() {
                     override fun onSuccess(statusCode: Int, headers: Array<out Header>?, response: JSONObject) {
                         super.onSuccess(statusCode, headers, response)
+                        //dismiss dialog on success request
+                        dialog?.dismiss()
+
                         var activateSuccess = false
                         try {
                             activateSuccess = response.getBoolean("success")
                         } catch (e: Exception) {
                         }
                         if (activateSuccess) {
-                            Toast.makeText(context, "Voucher activation success", Toast.LENGTH_SHORT).show()
+                            setResult(RESULT_OK)
                             finish()
                         } else
                             Toast.makeText(context, "Something went wrong", Toast.LENGTH_SHORT).show()
-                        dialog?.dismiss()
                     }
 
                     override fun onStart() {
@@ -166,6 +169,9 @@ class RedeemActivity : AppCompatActivity() {
                 BackendAPIRestClient(this.applicationContext).redeem(bundle.getString("code"), bundle.getInt("outletId"), object : JsonHttpResponseHandler() {
                     override fun onSuccess(statusCode: Int, headers: Array<out Header>?, response: JSONObject) {
                         super.onSuccess(statusCode, headers, response)
+
+                        dialog?.dismiss()
+
                         println("=============" + bundle.getString("code") + " " + bundle.getInt("outletId") + "=============")
                         var redeemSuccess = false
                         try {
@@ -173,11 +179,10 @@ class RedeemActivity : AppCompatActivity() {
                         } catch (e: Exception) {
                         }
                         if (redeemSuccess) {
-                            Toast.makeText(context, response.getString("msg"), Toast.LENGTH_SHORT).show()
+                            setResult(RESULT_OK)
                             finish()
                         } else
                             Toast.makeText(context, "Something went wrong", Toast.LENGTH_SHORT).show()
-                        dialog?.dismiss()
                     }
 
                     override fun onStart() {
