@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Web Service address and port -->
     <string name="host_example">http://192.168.1.1:2000/</string>
+    <!-- password for app -->
     <string name="password_example">thisisapppassword</string>
+    <!-- Password for each Outlet -->
     <string-array name="outlet_password_example">
         <item>ABC12</item>
         <item>ABC12</item>

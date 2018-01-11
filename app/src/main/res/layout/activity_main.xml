@@ -35,14 +35,14 @@
             android:id="@+id/activatedtextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/activated"
+            android:text="@string/activated_label"
             android:textSize="24sp" />
 
         <TextView
             android:id="@+id/activatedCount"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="1000 / 1000"
+            android:text="@string/empty_status_label"
             android:textAlignment="center"
             android:textSize="60sp" />
 
@@ -58,14 +58,14 @@
             android:id="@+id/redeemedtextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/redeemed"
+            android:text="@string/redeemed_label"
             android:textSize="24sp" />
 
         <TextView
             android:id="@+id/redeemedCount"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="1000 / 1000"
+            android:text="@string/empty_status_label"
             android:textAlignment="center"
             android:textSize="60sp" />
 

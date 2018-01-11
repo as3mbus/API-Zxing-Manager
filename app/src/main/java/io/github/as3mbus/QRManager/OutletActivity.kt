@@ -22,6 +22,7 @@ class OutletActivity : AppCompatActivity() {
         val imgid = this.resources.obtainTypedArray(R.array.outlet_image)
         outletAdapter = OutletAdapter(data.toList(),imgid)
         outletRecyclerView.adapter = outletAdapter
+        imgid.recycle()
 
 
     }

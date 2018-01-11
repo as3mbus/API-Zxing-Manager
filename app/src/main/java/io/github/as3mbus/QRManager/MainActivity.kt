@@ -65,8 +65,6 @@ class MainActivity : AppCompatActivity() {
 
     //handle scan result
     override fun onActivityResult(requestCode: Int, resultCode: Int, intent: Intent?) {
-        println("REQUEST CODE = " + requestCode)
-        println("RESULT CODE = " + resultCode)
         if (requestCode == 49374) {
             val scanResult = IntentIntegrator.parseActivityResult(requestCode, resultCode, intent)
             if (scanResult != null) {
@@ -81,7 +79,6 @@ class MainActivity : AppCompatActivity() {
             } else
                 Toast.makeText(this, "scan Canceled", Toast.LENGTH_SHORT).show()
         } else if (requestCode == 1 && resultCode == Activity.RESULT_OK) {
-            print("SHOW DIALOG")
             AlertDialog.Builder(this)
                     .setTitle("")
                     .setMessage("Activation Completed Successfully")
@@ -94,7 +91,6 @@ class MainActivity : AppCompatActivity() {
                     .show()
 
         } else if (requestCode == 2 && resultCode == Activity.RESULT_OK) {
-            print("SHOW DIALOG")
             AlertDialog.Builder(this)
                     .setTitle("")
                     .setMessage("Voucher Redeemed Successfully")
@@ -136,8 +132,6 @@ class MainActivity : AppCompatActivity() {
                     expiryDate = response.getJSONObject("vochercode")?.getString("expiryDate")!!
                     outletName = response.getJSONObject("vochercode")?.getJSONObject("Outlet")?.getString("name")!!
                 } catch (e: Exception) {
-                    println("==============RETRIEVAL FAILURE===================")
-                    println("" + success + " " + isExpired + " " + isActivated + " ")
                 }
                 val permission = outletOrigin == outletId
 
@@ -250,6 +244,7 @@ class MainActivity : AppCompatActivity() {
                         var activeOriginVoucherCount = 0
                         var activeVoucherCount = 0
                         var activeVoucherRedeemedCount = 0
+
                         //parse response
                         try {
                             activeVoucherCount = response?.getInt("vocherActiveCount")!!
@@ -258,9 +253,10 @@ class MainActivity : AppCompatActivity() {
                             activeOriginVoucherCount = response.getJSONObject("outlets")?.getInt("vocherActiveOriginCount")!!
                         } catch (e: Exception) {
                         }
+
                         //set text view
-                        activatedCount.text = "" + activeOriginVoucherCount + " / " + originVoucherCount
-                        redeemedCount.text = "" + activeVoucherRedeemedCount + " / " + activeVoucherCount
+                        activatedCount.text = resources.getString(R.string.status_labels, activeOriginVoucherCount, originVoucherCount )
+                        redeemedCount.text = resources.getString(R.string.status_labels, activeVoucherRedeemedCount , activeVoucherCount )
 
                     }
 

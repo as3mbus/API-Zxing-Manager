@@ -2,7 +2,7 @@ package io.github.as3mbus.QRManager
 
 import android.content.Context
 import android.content.Intent
-import android.content.res.Resources
+import android.content.res.TypedArray
 import android.os.Bundle
 import android.support.v4.content.ContextCompat.startActivity
 import android.support.v7.widget.RecyclerView
@@ -12,19 +12,15 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
-import cz.msebera.android.httpclient.client.cache.Resource
 import kotlinx.android.synthetic.main.outlet_item.view.*
-import android.content.res.TypedArray
-
-
 
 
 /**
  * Created by as3mbus on 03/11/17. GGWP HEYEAYEAYEAAA
  */
 class OutletAdapter(myDataset: List<String>, imageid: TypedArray) : RecyclerView.Adapter<OutletAdapter.ViewHolder>() {
-    var values: MutableList<String>? = null
-    var imgid:TypedArray? = null
+    private var values: MutableList<String>? = null
+    private var imgid:TypedArray? = null
 
     override fun onBindViewHolder(holder: ViewHolder?, position: Int) {
         val outletname = values?.get(position)
@@ -44,10 +40,9 @@ class OutletAdapter(myDataset: List<String>, imageid: TypedArray) : RecyclerView
             //Fire that second activity
 
             startActivity(holder.viewContext, i, bundle)
-            Toast.makeText(holder.viewContext, "Hello " + outletname + "!", Toast.LENGTH_SHORT).show()
+            Toast.makeText(holder.viewContext, "Hello $outletname!", Toast.LENGTH_SHORT).show()
         }
-        val name = outletname
-        holder?.outletTextView?.text = name
+        holder?.outletTextView?.text = outletname
         holder?.outletIamge?.setImageDrawable(imgid?.getDrawable(position)!!)
     }
 

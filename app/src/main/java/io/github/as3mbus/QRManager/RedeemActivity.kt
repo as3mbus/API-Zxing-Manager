@@ -75,22 +75,22 @@ class RedeemActivity : AppCompatActivity() {
                 if (!isActivated) {
                     if (permission) {
                         GenerateQR().execute(bundle.getString("code", ""))
-                        message1TextView.text = resources.getString(R.string.activation_confirmation)
+                        message1TextView.text = resources.getString(R.string.activation_confirmation_message)
                         message2TextView.text = bundle.getString("expiryDate", "error").substring(0, 10)
                     } else {
-                        message1TextView.text = resources.getString(R.string.activation_fail_permission)
+                        message1TextView.text = resources.getString(R.string.activation_fail_permission_message)
                         message2TextView.text = bundle.getString("outletName", "error")
                     }
                 } else {
-                    message1TextView.text = resources.getString(R.string.activation_fail_active)
+                    message1TextView.text = resources.getString(R.string.activation_fail_active_message)
                     message2TextView.text = ""
                 }
             } else {
-                message1TextView.text = resources.getString(R.string.voucher_expired)
+                message1TextView.text = resources.getString(R.string.voucher_expired_message)
                 message2TextView.text = bundle.getString("expiryDate", "errorerrorerrorerror").substring(0, 10)
             }
         } else {
-            message1TextView.text = resources.getString(R.string.voucher_not_found)
+            message1TextView.text = resources.getString(R.string.voucher_not_found_message)
             message2TextView.text = ""
         }
         if (success && !isExpired && !isActivated && permission) {
@@ -144,22 +144,22 @@ class RedeemActivity : AppCompatActivity() {
             if (!isExpired) {
                 if (isActivated) {
                     if (!isRedeemed) {
-                        message1TextView.text = resources.getString(R.string.redeem_confirmation)
+                        message1TextView.text = resources.getString(R.string.redeem_confirmation_message)
                         message2TextView.text = bundle.getString("outletPromo", "error")
                     } else {
-                        message1TextView.text = resources.getString(R.string.redeem_fail_redeemed)
+                        message1TextView.text = resources.getString(R.string.redeem_fail_redeemed_message)
                         message2TextView.text = bundle.getString("usedDate", "errorerrorerrorerror").substring(0, 10)
                     }
                 } else {
-                    message1TextView.text = resources.getString(R.string.redeem_fail_not_activated)
+                    message1TextView.text = resources.getString(R.string.redeem_fail_not_activated_message)
                     message2TextView.text = resources.getStringArray(R.array.outlet_name)[bundle.getInt("outletOrigin") - 1]
                 }
             } else {
-                message1TextView.text = resources.getString(R.string.voucher_expired)
+                message1TextView.text = resources.getString(R.string.voucher_expired_message)
                 message2TextView.text = bundle.getString("expiryDate", "errorerrorerror").substring(0, 10)
             }
         } else {
-            message1TextView.text = resources.getString(R.string.voucher_not_found)
+            message1TextView.text = resources.getString(R.string.voucher_not_found_message)
             message2TextView.text = ""
         }
         if (success && !isExpired && isActivated && !isRedeemed) {
@@ -171,8 +171,6 @@ class RedeemActivity : AppCompatActivity() {
                         super.onSuccess(statusCode, headers, response)
 
                         dialog?.dismiss()
-
-                        println("=============" + bundle.getString("code") + " " + bundle.getInt("outletId") + "=============")
                         var redeemSuccess = false
                         try {
                             redeemSuccess = response.getBoolean("success")

@@ -6,9 +6,9 @@ import com.loopj.android.http.AsyncHttpResponseHandler
 import com.loopj.android.http.RequestParams
 
 /**
- * Created by as3mbus on 09/11/17.
- */
-public class BackendAPIRestClient(context: Context) {
+* Created by as3mbus on 09/11/17.
+*/
+class BackendAPIRestClient(context: Context) {
     private val BASE_URL = context.resources.getString(R.string.host)
 
     private val client = AsyncHttpClient()
@@ -56,7 +56,7 @@ public class BackendAPIRestClient(context: Context) {
         client.patch(getAbsoluteUrl(url), params, responseHandler)
     }
 
-    fun getAbsoluteUrl(relativeUrl: String): String {
+    private fun getAbsoluteUrl(relativeUrl: String): String {
         return BASE_URL + relativeUrl
 
     }
