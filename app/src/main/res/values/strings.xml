@@ -6,6 +6,7 @@
     <string name="activate_title">Activate Voucher</string>
     <string name="outlet_content">outlet</string>
     <string name="next_button">Next</string>
+    <string name="back_button">Back</string>
     <string name="redeem_button">Redeem</string>
     <string name="activate_button">Activate</string>
     <string name="activated">Activated Code : </string>

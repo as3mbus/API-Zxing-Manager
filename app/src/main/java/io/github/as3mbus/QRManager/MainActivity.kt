@@ -5,7 +5,6 @@ import android.app.Activity
 import android.app.AlertDialog
 import android.app.Dialog
 import android.content.Context
-import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
@@ -19,7 +18,7 @@ import org.json.JSONObject
 
 class MainActivity : AppCompatActivity() {
 
-    val PREFS_NAME = "OutletPrefs"
+    private val PREFS_NAME = "OutletPrefs"
 
     private var context: Context? = null
 
@@ -39,7 +38,7 @@ class MainActivity : AppCompatActivity() {
         context = this
         dialog = Dialog(this)
         dialog?.setCancelable(false)
-        dialog?.setContentView(R.layout.dialog_connecting);
+        dialog?.setContentView(R.layout.dialog_connecting)
 
         val settings = getSharedPreferences(PREFS_NAME, 0)
         outletId = settings.getInt("outletId", -1)
@@ -88,7 +87,7 @@ class MainActivity : AppCompatActivity() {
                     .setMessage("Activation Completed Successfully")
                     .setPositiveButton(
                             "Close",
-                            DialogInterface.OnClickListener { dialog, which ->
+                            { dialog, _ ->
                                 dialog.dismiss()
                             }
                     )
@@ -101,7 +100,7 @@ class MainActivity : AppCompatActivity() {
                     .setMessage("Voucher Redeemed Successfully")
                     .setPositiveButton(
                             "Close",
-                            DialogInterface.OnClickListener { dialog, which ->
+                            { dialog, _ ->
                                 dialog.dismiss()
                             }
                     )

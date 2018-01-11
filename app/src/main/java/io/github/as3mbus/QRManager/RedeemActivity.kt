@@ -26,7 +26,7 @@ class RedeemActivity : AppCompatActivity() {
 
         dialog = Dialog(this)
         dialog?.setCancelable(false)
-        dialog?.setContentView(R.layout.dialog_connecting);
+        dialog?.setContentView(R.layout.dialog_connecting)
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_redeem)
@@ -94,7 +94,7 @@ class RedeemActivity : AppCompatActivity() {
             message2TextView.text = ""
         }
         if (success && !isExpired && !isActivated && permission) {
-            actionButton.text = "Activate"
+            actionButton.text = resources.getString(R.string.activate_button)
             actionButton.setOnClickListener {
                 BackendAPIRestClient(this.applicationContext).activate(bundle.getString("code"), object : JsonHttpResponseHandler() {
                     override fun onSuccess(statusCode: Int, headers: Array<out Header>?, response: JSONObject) {
@@ -124,7 +124,7 @@ class RedeemActivity : AppCompatActivity() {
             }
         } else {
             actionImageView.setImageResource(R.drawable.x)
-            actionButton.text = "Back"
+            actionButton.text = resources.getString(R.string.back_button)
             actionButton.setOnClickListener {
                 finish()
             }
@@ -164,7 +164,7 @@ class RedeemActivity : AppCompatActivity() {
         }
         if (success && !isExpired && isActivated && !isRedeemed) {
             actionImageView.setImageDrawable(resources.obtainTypedArray(R.array.outlet_image).getDrawable(bundle.getInt("outletId")-1))
-            actionButton.text = "Redeem"
+            actionButton.text = resources.getString(R.string.redeem_button)
             actionButton.setOnClickListener {
                 BackendAPIRestClient(this.applicationContext).redeem(bundle.getString("code"), bundle.getInt("outletId"), object : JsonHttpResponseHandler() {
                     override fun onSuccess(statusCode: Int, headers: Array<out Header>?, response: JSONObject) {
@@ -195,7 +195,7 @@ class RedeemActivity : AppCompatActivity() {
             }
         } else {
             actionImageView.setImageResource(R.drawable.x)
-            actionButton.text = "Back"
+            actionButton.text = resources.getString(R.string.back_button)
             actionButton.setOnClickListener {
                 finish()
             }
